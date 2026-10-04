@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CJC-1295 (no DAC) + Ipamorelin | Claims vs Evidence</title>
+<meta name="description" content="An interactive, educational deep-dive into the CJC-1295 (no DAC) + Ipamorelin stack: what each peptide is, why they're combined, the synergy claim, the honest evidence check, and what people online report. Not medical advice.">
+<script>
+try{var _t=localStorage.getItem("cjcipa-theme");if(_t==="light"||_t==="dark")document.documentElement.setAttribute("data-theme",_t);}catch(e){}
+</script>
+<style>
+:root{
+  --bg0:#06070d; --bg1:#0a0c17;
+  --ink:#edf0f9; --muted:#a9b1c9; --faint:#7f88a5;
+  --red:#f87171; --red-deep:#dc2626;
+  --teal:#5eead4; --teal-deep:#0d9488;
+  --amber:#fbbf24; --rose:#fb7185; --cyan:#67e8f9;
+  --card:#0d1020; --card2:#12162b;
+  --line:rgba(255,255,255,.09);
+  --grad:linear-gradient(100deg,#f87171 10%,#5eead4 90%);
+  --radius:18px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --disp:"Avenir Next","Segoe UI",-apple-system,BlinkMacSystemFont,Inter,Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg0);color:var(--ink);
+  font-size:1.06rem;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.bg-grad{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(900px 620px at 12% -6%, rgba(220,38,38,.16), transparent 60%),
+    radial-gradient(820px 600px at 88% 22%, rgba(13,148,136,.14), transparent 60%),
+    radial-gradient(1000px 800px at 50% 110%, rgba(190,60,60,.10), transparent 62%),
+    radial-gradient(700px 500px at 78% 78%, rgba(251,113,133,.07), transparent 60%)}
+#dots{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85}
+.orb{position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(90px)}
+.o1{width:520px;height:520px;left:-140px;top:6%;background:radial-gradient(circle,rgba(220,38,38,.14),transparent 70%);animation:drift1 38s ease-in-out infinite alternate}
+.o2{width:460px;height:460px;right:-120px;top:38%;background:radial-gradient(circle,rgba(13,148,136,.14),transparent 70%);animation:drift2 46s ease-in-out infinite alternate}
+.o3{width:430px;height:430px;left:24%;bottom:-160px;background:radial-gradient(circle,rgba(251,191,36,.08),transparent 70%);animation:drift3 54s ease-in-out infinite alternate}
+@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(120px,80px)}}
+@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-100px,-70px)}}
+@keyframes drift3{from{transform:translate(0,0)}to{transform:translate(90px,-80px)}}
+#confetti{position:fixed;inset:0;z-index:65;pointer-events:none;opacity:0;transition:opacity .6s ease}
+#confetti.show{opacity:1}
+#doneToast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);z-index:66;
+  background:var(--card);border:1px solid var(--line);color:var(--ink);
+  padding:.7rem 1.25rem;border-radius:999px;font-size:.9rem;font-weight:600;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .5s ease,transform .5s ease;
+  box-shadow:0 8px 30px rgba(0,0,0,.28)}
+#doneToast.show{opacity:1;transform:translate(-50%,0)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:60;background:var(--grad);border-radius:0 3px 3px 0}
+#themeToggle{position:fixed;top:12px;right:14px;z-index:70;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:transform .25s ease,background .25s ease;
+  box-shadow:0 4px 18px rgba(0,0,0,.25)}
+#themeToggle:hover{transform:scale(1.08)}
+#themeToggle:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+#themeToggle svg{width:20px;height:20px}
+[data-theme="dark"] #themeToggle .ic-sun{display:block}
+[data-theme="dark"] #themeToggle .ic-moon{display:none}
+[data-theme="light"] #themeToggle .ic-sun{display:none}
+[data-theme="light"] #themeToggle .ic-moon{display:block}
+[data-theme="dark"]{color-scheme:dark}
+nav.chapters{position:sticky;top:0;z-index:50;background:rgba(6,7,13,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav.chapters .rail{max-width:1080px;margin:0 auto;padding:.65rem 1rem;display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;padding-right:3.8rem}
+nav.chapters .rail::-webkit-scrollbar{display:none}
+nav.chapters a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-size:.82rem;font-weight:600;
+  letter-spacing:.04em;padding:.42rem .8rem;border:1px solid var(--line);border-radius:999px;white-space:nowrap;transition:all .25s ease}
+nav.chapters a:hover{color:var(--ink);border-color:rgba(255,255,255,.25)}
+nav.chapters a.active{color:#0a0c14;background:var(--grad);border-color:transparent}
+.toc{display:none}
+@media(min-width:1200px){
+  nav.chapters{display:none}
+  body{padding-left:248px}
+  .toc{display:flex;position:fixed;left:0;top:0;bottom:0;width:248px;z-index:45;
+    flex-direction:column;justify-content:center;gap:.2rem;
+    padding:2rem 1.1rem 2rem 1.4rem;
+    background:rgba(6,7,13,.72);backdrop-filter:blur(14px);border-right:1px solid var(--line)}
+  .toc .brand{font-family:var(--disp);font-weight:800;font-size:.98rem;letter-spacing:-.01em;
+    margin-bottom:1.2rem;line-height:1.35;color:var(--ink);
+    text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+  .toc .brand .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .toc a{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--muted);
+    font-size:.86rem;font-weight:600;padding:.55rem .7rem;border-radius:10px;
+    border:1px solid transparent;transition:all .22s ease;position:relative;z-index:1}
+  .toc a .n{font-size:.72rem;font-weight:800;color:var(--faint);width:1.7rem;flex:0 0 auto;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+  .toc a:hover{color:var(--ink);background:rgba(255,255,255,.045)}
+  .toc a.active{color:#0a0c14;font-weight:700}
+  .toc a.active .n{color:#0a0c14}
+  .toc-pill{position:absolute;left:1.4rem;top:0;width:calc(100% - 2.5rem);height:40px;border-radius:10px;
+    background:var(--grad);z-index:0;opacity:0;pointer-events:none;
+    transition:transform .5s cubic-bezier(.25,.8,.25,1),opacity .35s ease,height .3s ease}
+  .toc .mini{margin-top:1.5rem;font-size:.7rem;color:var(--faint);letter-spacing:.14em;
+    text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+  .toc .mini #tocPct{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+    font-size:.85rem;font-weight:800;letter-spacing:0;font-variant-numeric:tabular-nums}
+  .toc .mini-bar{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-top:.55rem;overflow:hidden}
+  .toc .mini-bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:99px}
+}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:0 1.25rem}
+section.chapter{padding:4.2rem 0 1rem;scroll-margin-top:84px}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+.eyebrow .n{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:10px;
+  background:var(--grad);color:#0a0c14;font-size:.85rem;letter-spacing:0}
+h2{font-family:var(--disp);font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:1rem}
+h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{color:var(--muted);font-size:1.12rem;max-width:44rem;margin-bottom:2rem}
+.lede strong{color:var(--ink)}
+.hero{position:relative;z-index:1;text-align:center;padding:5.5rem 1.25rem 3.5rem;max-width:960px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink);border:1px solid var(--line);background:rgba(255,255,255,.04);
+  padding:.55rem 1.1rem;border-radius:999px;margin-bottom:1.6rem}
+.badge .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(251,191,36,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(251,191,36,.55)}70%{box-shadow:0 0 0 12px rgba(251,191,36,0)}100%{box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+.hero h1{font-family:var(--disp);font-weight:900;letter-spacing:-.03em;line-height:1.02;font-size:clamp(2.2rem,7vw,4.6rem);margin-bottom:1.1rem}
+.hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% auto;animation:sheen 9s ease-in-out infinite}
+@keyframes sheen{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .sub{color:var(--muted);font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:42rem;margin:0 auto 2.2rem}
+.hero .sub strong{color:var(--ink)}
+.quickread{max-width:46rem;margin:0 auto;text-align:left;background:rgba(255,255,255,.035);
+  border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem 1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.quickread .tag{flex:0 0 auto;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--grad);color:#0a0c14;border-radius:8px;padding:.35rem .7rem;margin-top:.2rem}
+.quickread p{color:var(--muted);font-size:.98rem}
+.quickread p strong{color:var(--ink)}
+.hero-stats{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.4rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.5rem;min-width:150px}
+.stat .num{font-family:var(--disp);font-size:2rem;font-weight:800;background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{font-size:.8rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.scroll-hint{margin-top:3rem;color:var(--faint);font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(8px);opacity:1}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.5rem}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--ac,var(--grad))}
+.card.red{--ac:linear-gradient(90deg,var(--red-deep),var(--red))}
+.card.teal{--ac:linear-gradient(90deg,var(--teal-deep),var(--teal))}
+.card h3{font-family:var(--disp);font-size:1.35rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em}
+.card h3 .chem{font-size:.85rem;font-weight:600;color:var(--faint);letter-spacing:.08em}
+.card p,.card li{color:var(--muted);font-size:.99rem}
+.card ul{list-style:none;margin-top:.9rem;display:grid;gap:.65rem}
+.card ul li{padding-left:1.5rem;position:relative}
+.card ul li::before{content:"▸";position:absolute;left:0;font-weight:800}
+.card.red ul li::before{color:var(--red)}
+.card.teal ul li::before{color:var(--teal)}
+.card strong{color:var(--ink)}
+.plain{margin-top:1.2rem;background:rgba(255,255,255,.035);border:1px dashed rgba(255,255,255,.22);
+  border-radius:12px;padding:1rem 1.2rem;font-size:.96rem;color:var(--muted)}
+.plain b{color:var(--ink)}
+.plain .plabel{display:block;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:.35rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;margin-bottom:1.4rem}
+.panel h3{font-family:var(--disp);font-size:1.3rem;font-weight:800;margin-bottom:.8rem}
+.panel p{color:var(--muted);margin-bottom:.8rem}
+.panel p strong,.panel li strong{color:var(--ink)}
+.kv{display:flex;gap:.9rem;align-items:flex-start;padding:.9rem 0;border-top:1px solid var(--line)}
+.kv:first-of-type{border-top:none}
+.kv .k{flex:0 0 auto;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .7rem;border-radius:8px;margin-top:.25rem}
+.kv .k.r{background:rgba(248,113,113,.12);color:var(--red);border:1px solid rgba(248,113,113,.35)}
+.kv .k.t{background:rgba(94,234,212,.10);color:var(--teal);border:1px solid rgba(94,234,212,.35)}
+.kv .k.a{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid rgba(251,191,36,.35)}
+.kv .k.g{background:rgba(251,113,133,.12);color:var(--rose);border:1px solid rgba(251,113,133,.35)}
+.kv p{font-size:.99rem}
+.diagram{background:radial-gradient(600px 300px at 50% 0%,rgba(220,38,38,.10),transparent 70%),#090b15;
+  border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;margin:0 0 1.4rem;overflow:hidden}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram .cap{text-align:center;color:var(--faint);font-size:.85rem;margin-top:.9rem;letter-spacing:.03em}
+.flow{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite}
+@keyframes dashmove{to{stroke-dashoffset:-26}}
+.float-slow{animation:floaty 5s ease-in-out infinite}
+.float-slower{animation:floaty 7s ease-in-out infinite reverse}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.glow-pulse{animation:glowp 2.8s ease-in-out infinite}
+@keyframes glowp{0%,100%{opacity:.55}50%{opacity:1}}
+.ebar{margin:1rem 0 1.4rem}
+.ebar .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem}
+.ebar .row .t{font-weight:700;font-size:.98rem}
+.ebar .row .v{font-size:.88rem;color:var(--faint);font-variant-numeric:tabular-nums}
+.ebar .track{height:14px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.ebar .fill{height:100%;width:0;border-radius:999px;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+.in .ebar .fill{width:var(--w)}
+.ebar .note{font-size:.85rem;color:var(--faint);margin-top:.45rem}
+.anec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:720px){.anec-grid{grid-template-columns:1fr}}
+.anec{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;position:relative;overflow:hidden}
+.anec::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.anec .stamp{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.12em;
+  color:var(--amber);border:1px solid rgba(251,191,36,.4);background:rgba(251,191,36,.08);
+  padding:.28rem .6rem;border-radius:7px;text-transform:uppercase;margin-bottom:.65rem}
+.anec h4{font-size:1.05rem;font-weight:800;margin-bottom:.5rem}
+.anec-head{display:flex;align-items:center;gap:.85rem;margin-bottom:.55rem}
+.anec-head .thumb{flex:0 0 auto;width:54px;height:54px;border-radius:14px;border:1px solid var(--line)}
+.anec-head h4{margin-bottom:0}
+.anec p{color:var(--muted);font-size:.95rem}
+.anec p strong{color:var(--ink)}
+.anec .caveat{margin-top:.8rem;font-size:.82rem;color:var(--faint);border-top:1px dashed var(--line);padding-top:.7rem}
+.folk-note{background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.3);border-radius:var(--radius);
+  padding:1.2rem 1.4rem;margin-bottom:1.6rem;color:var(--muted);font-size:.98rem}
+.folk-note strong{color:var(--amber)}
+</style>
+<style>
+.gloss{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.g-item{border-bottom:1px solid var(--line)}
+.g-item:last-child{border-bottom:none}
+.g-q{width:100%;background:none;border:none;color:var(--ink);font-family:var(--font);font-size:1.02rem;font-weight:700;
+  text-align:left;padding:1.05rem 1.4rem;cursor:pointer;display:flex;justify-content:flex-start;align-items:center;gap:1rem}
+.g-q:hover{background:rgba(255,255,255,.03)}
+.g-q .term{color:var(--red)}
+.g-item:nth-child(even) .g-q .term{color:var(--teal)}
+.g-q .plus{flex:0 0 auto;width:1.7rem;height:1.7rem;border-radius:50%;border:1px solid var(--line);margin-left:auto;
+  display:inline-flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--muted);transition:all .3s}
+.g-item.open .g-q .plus{transform:rotate(45deg);background:var(--grad);color:#0a0c14;border-color:transparent}
+.gthumb{flex:0 0 auto;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);
+  animation:gaFloat 5s ease-in-out infinite}
+.gthumb.v2{animation:gaBreathe 4.4s ease-in-out infinite}
+.gthumb.v3{animation:gaTilt 6s ease-in-out infinite}
+@keyframes gaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes gaBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes gaTilt{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.g-a{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.g-a .gsci,.g-a .gex{padding:0 1.4rem 1rem;color:var(--muted);font-size:.95rem}
+.g-a .gsci strong,.g-a .gex strong{color:var(--ink)}
+.gslabel{display:block;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.35rem}
+.g-a .gex{margin:0 1.4rem 1rem;padding:0 0 0 1rem;border-left:2px solid var(--line)}
+.g-a .plain{margin:0 1.4rem 1.3rem}
+.takes{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:720px){.takes{grid-template-columns:1fr}}
+.take{background:var(--card2);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;display:flex;gap:1rem}
+.take .ic{flex:0 0 auto;width:2.6rem;height:2.6rem;border-radius:12px;background:var(--grad);
+  display:flex;align-items:center;justify-content:center;font-size:1.25rem;animation:icBob 4.5s ease-in-out infinite}
+.takes .take:nth-child(2) .ic{animation-delay:-1.2s}
+.takes .take:nth-child(3) .ic{animation-delay:-2.1s}
+.takes .take:nth-child(4) .ic{animation-delay:-.6s}
+.takes .take:nth-child(5) .ic{animation-delay:-3s}
+.takes .take:nth-child(6) .ic{animation-delay:-1.8s}
+@keyframes icBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.take h4{font-size:1.02rem;font-weight:800;margin-bottom:.35rem}
+.take p{color:var(--muted);font-size:.94rem}
+.limits{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;margin-bottom:1rem}
+.limits h3{font-size:1.15rem;font-weight:800;margin-bottom:.8rem}
+.limits ul{list-style:none;display:grid;gap:.6rem;color:var(--muted);font-size:.97rem}
+.limits li{padding-left:1.5rem;position:relative}
+.limits li::before{content:"—";position:absolute;left:0;color:var(--faint)}
+.limits strong{color:var(--ink)}
+footer.disclaimer{position:relative;z-index:1;margin:3rem 0 0;background:#05060b;border-top:1px solid var(--line);padding:3.2rem 0}
+footer.disclaimer .wrap{max-width:960px}
+footer.disclaimer h2{font-size:1.4rem;margin-bottom:1.2rem}
+footer.disclaimer .dbox{border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.05);
+  border-radius:var(--radius);padding:1.5rem 1.6rem;margin-bottom:1.4rem}
+footer.disclaimer .dbox p{color:var(--muted);font-size:.93rem;margin-bottom:.8rem}
+footer.disclaimer .dbox p:last-child{margin-bottom:0}
+footer.disclaimer .dbox strong{color:var(--ink)}
+footer.disclaimer .fine{color:var(--faint);font-size:.82rem;display:grid;gap:.6rem}
+footer.disclaimer .fine strong{color:var(--muted)}
+.foot-sign{margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:.6rem;color:var(--faint);font-size:.82rem}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:1rem 0}
+.num-badge{display:inline-flex;align-items:center;justify-content:center;min-width:2.4rem;height:2.4rem;padding:0 .6rem;
+  border-radius:12px;background:var(--grad);color:#0a0c14;font-weight:800;font-size:1rem;margin-right:.6rem;vertical-align:middle}
+.callout{border-left:3px solid;border-image:linear-gradient(180deg,var(--red),var(--teal)) 1;
+  padding:.4rem 0 .4rem 1.2rem;margin:1.4rem 0;color:var(--muted);font-size:1rem}
+.callout strong{color:var(--ink)}
+/* ---------- light theme: soft gray ---------- */
+[data-theme="light"]{
+  --bg0:#e3e3e0; --bg1:#d7d7d3;
+  --ink:#232322; --muted:#5b5b57; --faint:#8b8b85;
+  --red:#b91c1c; --red-deep:#991b1b;
+  --teal:#0f766e; --teal-deep:#115e59;
+  --amber:#b45309; --rose:#be123c; --cyan:#0e7490;
+  --card:#ececea; --card2:#e2e2de;
+  --line:rgba(35,35,35,.16);
+  --grad:linear-gradient(100deg,#dc2626 10%,#0d9488 90%);
+  color-scheme:light;
+}
+[data-theme="light"] .bg-grad{background:
+  radial-gradient(900px 620px at 12% -6%, rgba(220,38,38,.08), transparent 60%),
+  radial-gradient(820px 600px at 88% 22%, rgba(13,148,136,.10), transparent 60%),
+  radial-gradient(1000px 800px at 50% 110%, rgba(190,60,60,.06), transparent 62%),
+  radial-gradient(700px 500px at 78% 78%, rgba(190,24,93,.05), transparent 60%)}
+[data-theme="light"] nav.chapters{background:rgba(227,227,224,.88)}
+[data-theme="light"] .toc{background:rgba(227,227,224,.85)}
+[data-theme="light"] .diagram{background:radial-gradient(600px 300px at 50% 0%,rgba(220,38,38,.07),transparent 70%),#e8e8e5}
+[data-theme="light"] footer.disclaimer{background:#d4d4d0}
+[data-theme="light"] .ebar .track{background:rgba(35,35,35,.10)}
+[data-theme="light"] .plain{border-color:rgba(35,35,35,.35)}
+[data-theme="light"] .limits{background:rgba(35,35,35,.05)}
+[data-theme="light"] .quickread{background:rgba(255,255,255,.45)}
+[data-theme="light"] #themeToggle{box-shadow:0 4px 18px rgba(35,35,35,.2)}
+[data-theme="light"] .card::before{opacity:.85}
+[data-theme="light"] svg [fill="#f87171"]{fill:#b91c1c}
+[data-theme="light"] svg [fill="#5eead4"]{fill:#0f766e}
+[data-theme="light"] svg [fill="#7f88a5"]{fill:#716c5e}
+[data-theme="light"] svg [fill="#a9b1c9"]{fill:#57534a}
+[data-theme="light"] svg [fill="#edf0f9"]{fill:#26221a}
+[data-theme="light"] svg [fill="#fb7185"]{fill:#e11d48}
+[data-theme="light"] svg [fill="#3a4160"]{fill:#d9d3c1}
+[data-theme="light"] svg [stroke="#f87171"]{stroke:#b91c1c}
+[data-theme="light"] svg [stroke="#5eead4"]{stroke:#0f766e}
+[data-theme="light"] svg [stroke="#edf0f9"]{stroke:#57534a}
+[data-theme="light"] svg [stroke="#3a4160"]{stroke:#d9d3c1}
+@media(max-width:560px){
+  body{font-size:1rem}
+  section.chapter{padding:3rem 0 .5rem}
+  .hero{padding:4rem 1.25rem 2.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .flow,.float-slow,.float-slower,.glow-pulse,.gthumb,.orb,.take .ic,.hero h1 .g{animation:none}
+  .toc-pill{transition:none}
+  .scroll-hint{animation:none}
+  #dots{display:none}
+}
+</style>
+</head>
+<body>
+<div class="bg-grad"></div>
+<canvas id="dots" aria-hidden="true"></canvas>
+<div class="orb o1" aria-hidden="true"></div>
+<div class="orb o2" aria-hidden="true"></div>
+<div class="orb o3" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="doneToast" role="status">🎉 You reached the end — nice work getting through it all.</div>
+<div id="progress"></div>
+<button id="themeToggle" aria-label="Toggle light / dark mode" title="Toggle light / dark mode">
+  <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<nav class="chapters" aria-label="Page chapters">
+  <div class="rail" id="rail">
+    <a href="#ch1" data-spy="ch1">The Two</a>
+    <a href="#ch2" data-spy="ch2">Why Stack Them</a>
+    <a href="#ch3" data-spy="ch3">How They Might Work</a>
+    <a href="#ch4" data-spy="ch4">Evidence Check</a>
+    <a href="#ch5" data-spy="ch5">What People Say</a>
+    <a href="#ch6" data-spy="ch6">Safety</a>
+    <a href="#ch7" data-spy="ch7">Layman Terms</a>
+    <a href="#ch8" data-spy="ch8">Takeaways</a>
+  </div>
+</nav>
+
+<aside class="toc" aria-label="Table of contents">
+  <div class="toc-pill" aria-hidden="true"></div>
+  <div class="brand">The <span class="g">GH</span> Pulse Stack</div>
+  <a href="#ch1" data-spy="ch1"><span class="n">01</span>The Two</a>
+  <a href="#ch2" data-spy="ch2"><span class="n">02</span>Why Stack Them</a>
+  <a href="#ch3" data-spy="ch3"><span class="n">03</span>How They Might Work</a>
+  <a href="#ch4" data-spy="ch4"><span class="n">04</span>Evidence Check</a>
+  <a href="#ch5" data-spy="ch5"><span class="n">05</span>What People Say</a>
+  <a href="#ch6" data-spy="ch6"><span class="n">06</span>Safety</a>
+  <a href="#ch7" data-spy="ch7"><span class="n">07</span>Layman Terms</a>
+  <a href="#ch8" data-spy="ch8"><span class="n">08</span>Takeaways</a>
+  <div class="mini">Reading progress <span id="tocPct">0%</span></div>
+  <div class="mini-bar"><i id="tocProg"></i></div>
+</aside>
+
+<header class="hero">
+  <div class="badge"><span class="dot"></span> Investigational · Not FDA-approved · WADA-banned · Educational only</div>
+  <h1>CJC-1295 <span style="font-size:.55em;vertical-align:middle;opacity:.75">no DAC</span><br>+ <span class="g">Ipamorelin</span></h1>
+  <p class="sub">Two peptides, <strong>two different receptors</strong>, one pituitary cell — the forum-famous growth-hormone stack. This page walks through what each one is, why they're combined, what the research actually supports, and what people online report. <strong>Claims vs. evidence, side by side.</strong></p>
+  <div class="quickread reveal">
+    <span class="tag">The short version</span>
+    <p><strong>A GHRH analog plus a ghrelin-mimetic, paired because together they trigger a bigger GH pulse than either alone.</strong> The synergy mechanism is real endocrinology — but the specific combo has never been studied in a trial, neither compound is an approved medicine, and both are banned in tested sport.</p>
+  </div>
+  <div class="hero-stats">
+    <div class="stat reveal"><div class="num" data-count="29">0</div><div class="lbl">amino acids · CJC no DAC</div></div>
+    <div class="stat reveal d1"><div class="num" data-count="5">0</div><div class="lbl">amino acids · ipamorelin</div></div>
+    <div class="stat reveal d2"><div class="num" data-count="2">0</div><div class="lbl">receptors, one pituitary cell</div></div>
+    <div class="stat reveal d3"><div class="num" data-count="0">0</div><div class="lbl">human trials of the combo</div></div>
+  </div>
+  <div class="scroll-hint">Scroll &nbsp;↓</div>
+</header>
+
+<main class="wrap">
+<!-- ================= CHAPTER 1 : THE TWO ================= -->
+<section class="chapter" id="ch1">
+  <div class="eyebrow reveal"><span class="n">01</span> The two</div>
+  <h2 class="reveal">The signal and <span class="hl">the push</span></h2>
+  <p class="lede reveal">The stack pairs a <strong style="color:var(--red)">GHRH analog</strong> (the signal: "get ready to release GH") with a <strong style="color:var(--teal)">ghrelin mimetic</strong> (the push: "release it now"). Different molecules, different receptors — same pituitary cell.</p>
+
+  <div class="grid2">
+    <div class="card red reveal">
+      <h3>CJC-1295 <span class="chem">· NO DAC / Mod GRF 1-29</span></h3>
+      <div class="diagram" style="margin:1rem 0;padding:1rem">
+        <svg viewBox="0 0 400 150" role="img" aria-label="Diagram of the 29-amino-acid CJC-1295 no DAC chain">
+        <g class="float-slow">
+        <circle cx="60" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="82" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="104" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="126" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="148" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="170" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="192" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="214" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="236" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="258" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="280" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="302" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="324" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="346" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="368" cy="55" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="71" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="93" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="115" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="137" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="159" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="181" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="203" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="225" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="247" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="269" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="291" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="313" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="335" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <circle cx="357" cy="100" r="9.5" fill="rgba(248,113,113,.13)" stroke="#f87171" stroke-width="2"/>
+        <line x1="60" y1="55" x2="82" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="82" y1="55" x2="104" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="104" y1="55" x2="126" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="126" y1="55" x2="148" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="148" y1="55" x2="170" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="170" y1="55" x2="192" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="192" y1="55" x2="214" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="214" y1="55" x2="236" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="236" y1="55" x2="258" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="258" y1="55" x2="280" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="280" y1="55" x2="302" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="302" y1="55" x2="324" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="324" y1="55" x2="346" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="346" y1="55" x2="368" y2="55" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="368" y1="55" x2="71" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="71" y1="100" x2="93" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="93" y1="100" x2="115" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="115" y1="100" x2="137" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="137" y1="100" x2="159" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="159" y1="100" x2="181" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="181" y1="100" x2="203" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="203" y1="100" x2="225" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="225" y1="100" x2="247" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="247" y1="100" x2="269" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="269" y1="100" x2="291" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="291" y1="100" x2="313" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="313" y1="100" x2="335" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        <line x1="335" y1="100" x2="357" y2="100" stroke="#f87171" stroke-width="2.5" opacity=".55"/>
+        </g>
+        <text x="200" y="140" text-anchor="middle" fill="#7f88a5" font-size="13.5" font-family="inherit">29 amino acids — modified GHRH fragment (4 substitutions)</text>
+        </svg>
+      </div>
+      <ul>
+        <li><strong>29 amino acids</strong> — a modified GHRH fragment with 4 substitutions that resist enzymatic breakdown.</li>
+        <li><strong>"No DAC"</strong> means no Drug Affinity Complex: unlike the DAC version, it does <strong>not</strong> bind albumin — half-life is short (~30 min, widely quoted but never directly measured in humans).</li>
+        <li>Result: a <strong>brief, pulse-like GH release</strong> that mimics the body's natural rhythm, not a days-long "GH bleed."</li>
+        <li>The DAC version is a <strong>different compound</strong> (6–8 day half-life) — conflating the two is the #1 confusion online.</li>
+      </ul>
+      <div class="plain"><span class="plabel">Plain English</span><b>The "get ready" signal.</b> CJC-1295 no DAC knocks on the pituitary's GHRH door and tells it to prepare a pulse of growth hormone — then it's gone within the hour, the way natural signals are.</div>
+    </div>
+    <div class="card teal reveal d1">
+      <h3>Ipamorelin <span class="chem">· pentapeptide</span></h3>
+      <div class="diagram" style="margin:1rem 0;padding:1rem">
+        <svg viewBox="0 0 400 150" role="img" aria-label="Diagram of the 5-amino-acid ipamorelin chain">
+          <g class="float-slow">
+            <circle cx="70" cy="70" r="24" fill="rgba(94,234,212,.14)" stroke="#5eead4" stroke-width="2.5"/>
+            <circle cx="135" cy="70" r="24" fill="rgba(94,234,212,.14)" stroke="#5eead4" stroke-width="2.5"/>
+            <circle cx="200" cy="70" r="24" fill="rgba(94,234,212,.14)" stroke="#5eead4" stroke-width="2.5"/>
+            <circle cx="265" cy="70" r="24" fill="rgba(94,234,212,.14)" stroke="#5eead4" stroke-width="2.5"/>
+            <circle cx="330" cy="70" r="24" fill="rgba(94,234,212,.14)" stroke="#5eead4" stroke-width="2.5"/>
+            <line x1="94" y1="70" x2="111" y2="70" stroke="#5eead4" stroke-width="5" stroke-linecap="round"/>
+            <line x1="159" y1="70" x2="176" y2="70" stroke="#5eead4" stroke-width="5" stroke-linecap="round"/>
+            <line x1="224" y1="70" x2="241" y2="70" stroke="#5eead4" stroke-width="5" stroke-linecap="round"/>
+            <line x1="289" y1="70" x2="306" y2="70" stroke="#5eead4" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <text x="200" y="125" text-anchor="middle" fill="#7f88a5" font-size="13.5" font-family="inherit">5 amino acids — a ghrelin-receptor agonist, highly selective for GH release</text>
+        </svg>
+      </div>
+      <ul>
+        <li><strong>5 amino acids</strong> (Aib-His-D-2-Nal-D-Phe-Lys) — a ghrelin mimetic that hits the <strong>GHS receptor</strong>.</li>
+        <li>Famous for <strong>selectivity</strong>: strong GH release with minimal cortisol or prolactin rise — unlike older GHRPs (GHRP-6, GHRP-2).</li>
+        <li><strong>Half-life ~2 hours</strong>; notably <strong>less hunger stimulation</strong> than GHRP-6.</li>
+        <li>Developed by a pharma company (Novo Nordisk), tested in <strong>Phase 2 trials</strong> — then the program was discontinued.</li>
+      </ul>
+      <div class="plain"><span class="plabel">Plain English</span><b>The "go" button.</b> Ipamorelin presses the pituitary's second doorbell — the ghrelin receptor — triggering the actual GH pulse. Its claim to fame is doing this <em>cleanly</em>, without dragging stress hormones along.</div>
+    </div>
+  </div>
+
+  <div class="panel reveal">
+    <h3>Don't confuse the cousins</h3>
+    <div class="kv"><span class="k r">CJC + DAC</span><p><strong>Different drug.</strong> Albumin-binding linker → 6–8 day half-life → sustained GH/IGF-1 elevation for over a week ("GH bleed"). The human trials you hear about (Teichman 2006) used <em>this</em> version.</p></div>
+    <div class="kv"><span class="k r">CJC no DAC</span><p><strong>This page's compound.</strong> No linker → ~30 min half-life → one brief pulse per dose. <strong>No human pharmacokinetic trial of this exact molecule exists</strong> — the half-life figure is inferred, not measured.</p></div>
+    <div class="kv"><span class="k t">Sermorelin</span><p><strong>The older sibling.</strong> Another GHRH fragment (actually FDA-approved back in 1997, later discontinued commercially). Similar pulsatile idea, shorter half-life (~10–20 min).</p></div>
+  </div>
+</section>
+
+<!-- ================= CHAPTER 2 : WHY STACK ================= -->
+<section class="chapter" id="ch2">
+  <div class="eyebrow reveal"><span class="n">02</span> Why stack them</div>
+  <h2 class="reveal">1 + 1 = <span class="hl">3</span></h2>
+  <p class="lede reveal">The whole rationale is <strong>synergy</strong>: GHRH and ghrelin-mimetics hit <strong>two different receptors on the same pituitary cell</strong>, and the combined GH pulse is bigger than the sum of the parts. This isn't forum lore — it's textbook endocrinology, shown in human pilot data.</p>
+
+  <div class="diagram reveal">
+    <svg viewBox="0 0 900 320" role="img" aria-label="Diagram showing two pathways converging on a pituitary cell for a larger GH pulse">
+      <defs>
+        <path id="pA" d="M120 100 C 260 100, 340 150, 430 160" fill="none"/>
+        <path id="pB" d="M120 230 C 260 230, 340 180, 430 170" fill="none"/>
+      </defs>
+      <g class="float-slow">
+        <rect x="30" y="72" width="110" height="56" rx="12" fill="rgba(248,113,113,.10)" stroke="#f87171" stroke-width="2.5"/>
+        <text x="85" y="95" text-anchor="middle" fill="#f87171" font-size="14" font-weight="800" font-family="inherit">CJC-1295</text>
+        <text x="85" y="114" text-anchor="middle" fill="#7f88a5" font-size="12" font-family="inherit">GHRH receptor</text>
+      </g>
+      <g class="float-slower">
+        <rect x="30" y="202" width="110" height="56" rx="12" fill="rgba(94,234,212,.10)" stroke="#5eead4" stroke-width="2.5"/>
+        <text x="85" y="225" text-anchor="middle" fill="#5eead4" font-size="14" font-weight="800" font-family="inherit">Ipamorelin</text>
+        <text x="85" y="244" text-anchor="middle" fill="#7f88a5" font-size="12" font-family="inherit">ghrelin receptor</text>
+      </g>
+      <use href="#pA" stroke="#f87171" stroke-width="3" class="flow" fill="none" opacity=".8"/>
+      <use href="#pB" stroke="#5eead4" stroke-width="3" class="flow" fill="none" opacity=".8"/>
+      <g class="glow-pulse">
+        <ellipse cx="520" cy="165" rx="95" ry="70" fill="rgba(255,255,255,.03)" stroke="#a9b1c9" stroke-width="2.5"/>
+        <text x="520" y="158" text-anchor="middle" fill="#a9b1c9" font-size="15" font-weight="700" font-family="inherit">somatotroph</text>
+        <text x="520" y="180" text-anchor="middle" fill="#7f88a5" font-size="12.5" font-family="inherit">pituitary GH cell</text>
+      </g>
+      <g>
+        <path d="M630 165 C 680 165, 700 120, 760 120" stroke="#fbbf24" stroke-width="4" fill="none" class="flow"/>
+        <path d="M630 165 C 680 165, 700 210, 760 210" stroke="#fbbf24" stroke-width="4" fill="none" opacity=".35"/>
+        <text x="815" y="128" text-anchor="middle" fill="#fbbf24" font-size="15" font-weight="800" font-family="inherit">BIG GH pulse</text>
+        <text x="815" y="248" text-anchor="middle" fill="#7f88a5" font-size="13" font-family="inherit">bigger than either alone</text>
+      </g>
+      <text x="450" y="292" text-anchor="middle" fill="#7f88a5" font-size="14" font-family="inherit">Two receptors, two messengers (cAMP + calcium), one cell — converging on a larger pulse.</text>
+    </svg>
+    <div class="cap">The synergy: GHRH primes the cell, the ghrelin-mimetic fires it — together the pulse exceeds the sum.</div>
+  </div>
+
+  <div class="panel reveal">
+    <h3>Why no-DAC specifically?</h3>
+    <div class="kv"><span class="k r">Pulsatile</span><p>The no-DAC version produces <strong>discrete pulses</strong> that ride the body's natural rhythm — the community's stated reason for preferring it over the DAC "bleed."</p></div>
+    <div class="kv"><span class="k t">Complementary</span><p>GHRH analogs alone give a modest pulse; ghrelin-mimetics alone give a modest pulse; <strong>together they're synergistic</strong> — shown in human pilot data for GHRP+GHRH combinations generally.</p></div>
+    <div class="kv"><span class="k a">The catch</span><p><strong>The specific CJC-1295 (no DAC) + ipamorelin blend has never been studied.</strong> The synergy principle is established; this exact pairing's effects in humans are forum knowledge, not clinical knowledge.</p></div>
+    <div class="plain"><span class="plabel">Plain English</span><b>Two doorbells are louder than one.</b> Ringing the pituitary's GHRH doorbell <em>and</em> its ghrelin doorbell at the same time gets a bigger GH shout than either bell alone. The idea is sound — the specific combo just never got its own trial.</div>
+  </div>
+</section>
+<!-- ================= CHAPTER 3 : MECHANISMS ================= -->
+<section class="chapter" id="ch3">
+  <div class="eyebrow reveal"><span class="n">03</span> Proposed mechanisms</div>
+  <h2 class="reveal">Knock, knock — <span class="hl">two doors</span></h2>
+  <p class="lede reveal">Both peptides end at the same cell — the pituitary <strong>somatotroph</strong> — but they knock on different receptors and use different intracellular messengers. The pulse that follows raises GH, which tells the liver to make <strong>IGF-1</strong>, the downstream mediator of most GH effects.</p>
+
+  <div class="diagram reveal">
+    <svg viewBox="0 0 900 340" role="img" aria-label="Animated diagram of the GH pulse cascade from pituitary to liver to IGF-1">
+      <defs>
+        <path id="ghp" d="M300 120 C 420 120, 460 120, 560 120" fill="none"/>
+        <path id="igfp" d="M640 120 C 700 120, 720 180, 740 230" fill="none"/>
+      </defs>
+      <g class="float-slow">
+        <ellipse cx="200" cy="120" rx="100" ry="75" fill="rgba(255,255,255,.03)" stroke="#a9b1c9" stroke-width="2.5"/>
+        <text x="200" y="112" text-anchor="middle" fill="#a9b1c9" font-size="15" font-weight="700" font-family="inherit">somatotroph</text>
+        <text x="200" y="134" text-anchor="middle" fill="#7f88a5" font-size="12.5" font-family="inherit">pituitary cell</text>
+        <g>
+          <rect x="112" y="180" width="70" height="30" rx="8" fill="rgba(248,113,113,.12)" stroke="#f87171" stroke-width="2"/>
+          <text x="147" y="200" text-anchor="middle" fill="#f87171" font-size="11.5" font-weight="700" font-family="inherit">GHRH-R</text>
+        </g>
+        <g>
+          <rect x="218" y="180" width="70" height="30" rx="8" fill="rgba(94,234,212,.10)" stroke="#5eead4" stroke-width="2"/>
+          <text x="253" y="200" text-anchor="middle" fill="#5eead4" font-size="11.5" font-weight="700" font-family="inherit">GHS-R</text>
+        </g>
+        <text x="200" y="240" text-anchor="middle" fill="#7f88a5" font-size="12.5" font-family="inherit">cAMP + calcium → GH released</text>
+      </g>
+      <use href="#ghp" stroke="#fbbf24" stroke-width="4" class="flow" fill="none"/>
+      <g class="float-slower">
+        <circle cx="600" cy="120" r="40" fill="rgba(251,191,36,.10)" stroke="#fbbf24" stroke-width="2.5" class="glow-pulse"/>
+        <text x="600" y="128" text-anchor="middle" fill="#fbbf24" font-size="20" font-weight="800" font-family="inherit">GH</text>
+      </g>
+      <use href="#igfp" stroke="#f87171" stroke-width="3" class="flow" fill="none" opacity=".7"/>
+      <g class="float-slow">
+        <ellipse cx="760" cy="260" rx="80" ry="48" fill="rgba(248,113,113,.08)" stroke="#f87171" stroke-width="2.5"/>
+        <text x="760" y="254" text-anchor="middle" fill="#f87171" font-size="15" font-weight="700" font-family="inherit">liver</text>
+        <text x="760" y="276" text-anchor="middle" fill="#7f88a5" font-size="12.5" font-family="inherit">makes IGF-1</text>
+      </g>
+      <text x="450" y="318" text-anchor="middle" fill="#7f88a5" font-size="14" font-family="inherit">The cascade: two receptors → GH pulse → liver → IGF-1 (the actual growth signal).</text>
+    </svg>
+    <div class="cap">GH is the messenger; IGF-1 does most of the downstream work — and carries most of the theoretical risk.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card red reveal">
+      <h3>CJC's path <span class="chem">· GHRH receptor</span></h3>
+      <ul>
+        <li>Binds the <strong>GHRH receptor</strong> on somatotrophs → raises <strong>cAMP</strong> inside the cell.</li>
+        <li>cAMP <strong>primes</strong> the cell: more GH synthesized and staged for release.</li>
+        <li>Short half-life → the signal <strong>fades within the hour</strong>, preserving pulsatility.</li>
+      </ul>
+      <div class="plain"><span class="plabel">Plain English</span><b>Loading the cannon.</b> CJC tells the pituitary cell to manufacture and line up growth hormone, ready to fire — like cocking a mechanism rather than pulling the trigger.</div>
+    </div>
+    <div class="card teal reveal d1">
+      <h3>Ipamorelin's path <span class="chem">· ghrelin receptor</span></h3>
+      <ul>
+        <li>Binds the <strong>ghrelin (GHS) receptor</strong> → raises intracellular <strong>calcium</strong>.</li>
+        <li>Calcium <strong>triggers release</strong> of the staged GH — the actual pulse.</li>
+        <li><strong>Selective:</strong> minimal ACTH/cortisol/prolactin — the "clean pulse" reputation.</li>
+      </ul>
+      <div class="plain"><span class="plabel">Plain English</span><b>Pulling the trigger.</b> Ipamorelin fires the loaded cannon — and unlike older GHRPs, it (mostly) doesn't set off the neighboring alarms for stress hormones.</div>
+    </div>
+  </div>
+  <div class="callout reveal"><strong>Why the combo matters mechanistically:</strong> cAMP (priming) + calcium (release) converge on the same cell — which is exactly why the combined pulse exceeds either alone. The mechanism is the least controversial part of this page.</div>
+</section>
+
+<!-- ================= CHAPTER 4 : EVIDENCE CHECK ================= -->
+<section class="chapter" id="ch4">
+  <div class="eyebrow reveal"><span class="n">04</span> Honest evidence check</div>
+  <h2 class="reveal">Strong mechanism, <span class="hl">thin</span> outcomes</h2>
+  <p class="lede reveal">Here's the honest shape of it: <strong>real human pharmacology exists</strong> (these peptides do raise GH in people), but <strong>controlled trials of actual outcomes</strong> — body composition, recovery, aging — are essentially absent. Hormone levels were measured; benefits were not.</p>
+
+  <div class="panel reveal">
+    <h3><span class="num-badge">CJC-1295</span> Watch which version the data belongs to</h3>
+    <div class="ebar" style="--w:55%">
+      <div class="row"><span class="t">CJC-1295 <em>with DAC</em>: human trials exist</span><span class="v">Teichman 2006, Ionescu 2006</span></div>
+      <div class="track"><div class="fill" style="background:linear-gradient(90deg,#dc2626,#f87171)"></div></div>
+      <div class="note">Single injections raised IGF-1 1.5–3× baseline for 6–14 days. Real data — for the <strong>wrong molecule</strong> if you're researching no-DAC.</div>
+    </div>
+    <div class="ebar" style="--w:8%">
+      <div class="row"><span class="t">CJC-1295 <em>no DAC</em>: human trials</span><span class="v">≈ 0</span></div>
+      <div class="track"><div class="fill" style="background:linear-gradient(90deg,#dc2626,#f87171)"></div></div>
+      <div class="note"><strong>No human pharmacokinetic or efficacy trial of the no-DAC molecule exists.</strong> The "~30 min half-life" is inferred from chemistry, not measured in people.</div>
+    </div>
+    <div class="ebar" style="--w:30%">
+      <div class="row"><span class="t">Program history: abandoned 2006</span><span class="v">ConjuChem phase II halted</span></div>
+      <div class="track"><div class="fill" style="background:linear-gradient(90deg,#0d9488,#5eead4)"></div></div>
+      <div class="note">The DAC program's phase II (HIV lipodystrophy) was stopped after a participant death at an Argentine site. Development never resumed.</div>
+    </div>
+  </div>
+
+  <div class="panel reveal">
+    <h3><span class="num-badge">Ipamorelin</span> Better studied — and a negative trial</h3>
+    <div class="ebar" style="--w:70%">
+      <div class="row"><span class="t">Selectivity: GH without cortisol/prolactin</span><span class="v">Raun 1998 + human pilots</span></div>
+      <div class="track"><div class="fill" style="background:linear-gradient(90deg,#0d9488,#5eead4)"></div></div>
+      <div class="note">The strongest claim in ipamorelin's file: potent GH release with a cleaner endocrine profile than older GHRPs. Shown in animals and ~40 healthy volunteers.</div>
+    </div>
+    <div class="ebar" style="--w:45%">
+      <div class="row"><span class="t">Phase 2 postoperative ileus trial: missed endpoint</span><span class="v">Beck 2014, n=114, p=0.15</span></div>
+      <div class="track"><div class="fill" style="background:linear-gradient(90deg,#0d9488,#5eead4)"></div></div>
+      <div class="note">25.3 vs 32.6 hours — not significant. A real, properly blinded, <strong>negative</strong> trial. Development for that indication stopped.</div>
+    </div>
+    <div class="ebar" style="--w:10%">
+      <div class="row"><span class="t">Human outcome trials (body comp, recovery, sleep)</span><span class="v">≈ 0</span></div>
+      <div class="track"><div class="fill" style="background:linear-gradient(90deg,#0d9488,#5eead4)"></div></div>
+      <div class="note">Everything the forums claim — fat loss, muscle, recovery — has <strong>no controlled human trial</strong> behind it. Mechanism plus anecdotes only.</div>
+    </div>
+  </div>
+
+  <div class="panel reveal">
+    <h3><span class="num-badge">The stack</span> Status check</h3>
+    <div class="kv"><span class="k g">FDA</span><p><strong>Neither is FDA-approved</strong> for any use. CJC-1295's clinical development was abandoned; ipamorelin's pharma program was discontinued. Both circulate as unapproved research chemicals.</p></div>
+    <div class="kv"><span class="k g">WADA</span><p><strong>Both are WADA-prohibited</strong> (S2: peptide hormones and related substances). Tested athletes, this stack is off-limits — unlike GHK-Cu.</p></div>
+    <div class="kv"><span class="k a">The combo</span><p><strong>Zero human trials of CJC-1295 (no DAC) + ipamorelin together.</strong> The synergy principle is established science; this specific pairing's effects are entirely anecdotal.</p></div>
+    <div class="plain"><span class="plabel">Plain English</span><b>The engine is proven; the destination isn't.</b> We know these molecules raise growth hormone in people — that's measured. Whether that translates into the promised body-composition or recovery benefits has never been tested in a proper trial.</div>
+  </div>
+</section>
+<!-- ================= CHAPTER 5 : ANECDOTES ================= -->
+<section class="chapter" id="ch5">
+  <div class="eyebrow reveal"><span class="n">05</span> What people say</div>
+  <h2 class="reveal">Stories, <span class="hl">not</span> data</h2>
+  <p class="lede reveal">Recurring themes from forums, paraphrased. Every one is an <strong>unverified personal story</strong> — useful for knowing what to watch for, useless as proof.</p>
+  <div class="folk-note reveal"><strong>Read these like overheard conversations, not results.</strong> No controls, no blinding, heavy survivorship bias — and GH-adjacent effects (sleep, water, hunger) are exactly the kind expectation can manufacture.</div>
+
+  <div class="anec-grid">
+    <div class="anec reveal">
+      <span class="stamp">Unverified anecdote</span>
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M38 12a12 12 0 1 0 8 20" fill="none" stroke="#5eead4" stroke-width="2.6" stroke-linecap="round"/><path d="M16 34l2-2M38 34l-2-2M27 40v-3" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/></svg><h4>Deeper sleep</h4></div>
+      <p>The most consistent theme: <strong>falling asleep faster and waking more refreshed</strong>, usually attributed to the nighttime pulse riding the natural GH surge. Often reported within the first week.</p>
+      <div class="caveat">Caveat: sleep is the #1 placebo-responsive outcome, and a new bedtime ritual alone improves it. No sleep trial of this stack exists.</div>
+    </div>
+    <div class="anec reveal d1">
+      <span class="stamp">Unverified anecdote</span>
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><circle cx="27" cy="24" r="10" fill="none" stroke="#f87171" stroke-width="2.4"/><path d="M22 24h.5M32 24h.5M23 29q4 3 8 0" stroke="#f87171" stroke-width="2" stroke-linecap="round"/><path d="M14 40q13-6 26 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><h4>Vivid dreams</h4></div>
+      <p>A close second: <strong>unusually vivid, memorable dreams</strong>. Frequently mentioned alongside the sleep reports — sometimes as a perk, sometimes as a nuisance.</p>
+      <div class="caveat">Caveat: GH-axis activity and dreaming have a plausible link, but dream recall is also boosted by simply paying attention to sleep.</div>
+    </div>
+    <div class="anec reveal">
+      <span class="stamp">Unverified anecdote</span>
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="12" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 19v16M19 27h16" stroke="#5eead4" stroke-width="2.4" stroke-linecap="round"/><path d="M27 19l-3 3M27 19l3 3" stroke="#5eead4" stroke-width="1.8" stroke-linecap="round"/></svg><h4>"No hunger spike"</h4></div>
+      <p>Users switching from GHRP-6 often note <strong>much less ravenous hunger</strong> on ipamorelin — cited as the reason they chose it over older GHRPs.</p>
+      <div class="caveat">Caveat: aligns with ipamorelin's selectivity data, but "less hungry than GHRP-6" is a low bar and still self-reported.</div>
+    </div>
+    <div class="anec reveal d1">
+      <span class="stamp">Unverified anecdote</span>
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><path d="M18 20c0-4 3-6 5-8M27 22c0-5 4-7 6-10M36 24c0-4 3-6 4-8" stroke="#f87171" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="27" cy="36" rx="12" ry="7" fill="none" stroke="#f87171" stroke-width="2.2"/><path d="M20 36q7-4 14 0" stroke="#f87171" stroke-width="1.8" fill="none"/></svg><h4>Water retention</h4></div>
+      <p><strong>Puffy face, swollen fingers, a few pounds of "mystery weight"</strong> in the first weeks — the classic GH signature, and the reason some users quit early.</p>
+      <div class="caveat">Caveat: genuinely consistent with GH physiology (sodium/water retention) — which makes it one of the more believable anecdote clusters, not proof of benefit.</div>
+    </div>
+    <div class="anec reveal">
+      <span class="stamp">Unverified anecdote</span>
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M20 14v18M27 14v22M34 14v18" stroke="#5eead4" stroke-width="3" stroke-linecap="round"/><path d="M16 40q11-4 22 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="27" cy="30" r="2.4" fill="#f87171" class="glow-pulse"/></svg><h4>Tingling hands</h4></div>
+      <p><strong>Numbness or tingling in fingers/hands</strong>, especially overnight — described like mild carpal tunnel. Usually fades if use stops.</p>
+      <div class="caveat">Caveat: another textbook GH effect (tissue swelling compressing nerves). Believable as a side-effect report; still uncontrolled.</div>
+    </div>
+    <div class="anec reveal d1">
+      <span class="stamp">Unverified anecdote</span>
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><path d="M14 34l8-12 6 8 6-10 6 14" stroke="#f87171" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="42" x2="42" y2="42" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/></svg><h4>Faster recovery</h4></div>
+      <p>Lifters report <strong>less soreness and quicker bounce-back</strong> between sessions. The claim the whole stack is sold on — and the one with the least evidence.</p>
+      <div class="caveat">Caveat: the flagship claim has zero trial support. Better sleep alone (see tile #1) could explain all of it.</div>
+    </div>
+    <div class="anec reveal">
+      <span class="stamp">Unverified anecdote</span>
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="11" fill="none" stroke="#7f88a5" stroke-width="2.5"/><path d="M27 20v7l5 3" stroke="#7f88a5" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><h4>"Nothing happened"</h4></div>
+      <p>The quiet file: <strong>weeks of use, no change in sleep, recovery, or anything else</strong> — sometimes followed by suspicion the vials were bunk.</p>
+      <div class="caveat">Caveat: non-responders and bad product are indistinguishable in anecdotes — which is itself the point about gray-market quality.</div>
+    </div>
+    <div class="anec reveal d1">
+      <span class="stamp">Unverified anecdote</span>
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><rect x="12" y="16" width="14" height="22" rx="4" fill="none" stroke="#f87171" stroke-width="2.4"/><rect x="28" y="16" width="14" height="22" rx="4" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M19 24v6M35 24v6" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/></svg><h4>The DAC mix-up</h4></div>
+      <p>A recurring cautionary tale: users <strong>buying "CJC-1295" without checking DAC status</strong> — then wondering why one version needs frequent use and the other doesn't. Lab-test posts showing mislabeled vials fuel the paranoia.</p>
+      <div class="caveat">Caveat: this one's about the market, not the molecule — but it's the most actionable theme here: the label is not the molecule.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHAPTER 6 : SAFETY ================= -->
+<section class="chapter" id="ch6">
+  <div class="eyebrow reveal"><span class="n">06</span> Safety &amp; unknowns</div>
+  <h2 class="reveal">Raising GH is <span class="hl">not free</span></h2>
+  <p class="lede reveal">Growth hormone does a lot of things — that's the appeal and the problem. <strong>Every benefit attributed to this stack runs through the same GH/IGF-1 axis that carries the theoretical risks.</strong> You don't get one without the other.</p>
+
+  <div class="panel reveal">
+    <div class="kv"><span class="k g">IGF-1</span><p><strong>Theoretical cancer concern.</strong> Chronically elevated IGF-1 is associated in epidemiology with higher risk of several cancers. No trial links this stack to cancer — but the mechanism is the same one being stimulated on purpose.</p></div>
+    <div class="kv"><span class="k g">Metabolic</span><p><strong>Insulin resistance.</strong> GH opposes insulin; sustained elevation can raise blood sugar and reduce insulin sensitivity. A real consideration for anyone with prediabetes or metabolic issues.</p></div>
+    <div class="kv"><span class="k a">Water &amp; tissue</span><p><strong>Edema, joint stiffness, carpal-tunnel-like symptoms.</strong> The most commonly <em>reported</em> side effects — GH-driven fluid retention and tissue swelling. Usually reversible when use stops.</p></div>
+    <div class="kv"><span class="k r">Pituitary</span><p><strong>Long-term unknowns.</strong> What years of repeatedly hammering the somatotroph's two receptors does to pituitary function has never been studied in humans. No data, either direction.</p></div>
+    <div class="kv"><span class="k t">Quality</span><p><strong>The gray-market wildcard.</strong> Mislabeled DAC/no-DAC vials are a documented problem; unregulated peptides carry contamination and dosing-accuracy risks no trial can account for.</p></div>
+  </div>
+
+  <div class="callout reveal"><strong>The bottom line on safety:</strong> short-term use looks tolerable in the limited human data that exists — but the <em>long-term</em> picture of chronic GH/IGF-1 elevation is genuinely unknown, and the theoretical risks (metabolic, oncologic) are the same pathway as the hoped-for benefits. That's not a scare line; it's the biology.</div>
+</section>
+<!-- ================= CHAPTER 7 : GLOSSARY ================= -->
+<section class="chapter" id="ch7">
+  <div class="eyebrow reveal"><span class="n">07</span> Layman terms</div>
+  <h2 class="reveal">The glossary, <span class="hl">no PhD</span> required</h2>
+  <p class="lede reveal">Every term gets three layers: <strong>the science, a stack example, then plain English.</strong> Tap to expand.</p>
+
+  <div class="gloss reveal">
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(248,113,113,.10)"/><circle cx="14" cy="14" r="5" fill="#f87171"/><circle cx="28" cy="14" r="5" fill="#f87171"/><circle cx="14" cy="28" r="5" fill="#f87171"/><circle cx="28" cy="28" r="5" fill="#f87171"/><path d="M19 14h4M14 19v4M28 19v4M19 28h4" stroke="#f87171" stroke-width="1.8"/></svg><span class="term">GHRH</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>Growth-hormone-releasing hormone: the hypothalamus's signal telling the pituitary to release growth hormone. It binds the GHRH receptor on somatotroph cells, raising cAMP, which primes GH synthesis and release. It's one half of the body's natural GH pulse machinery.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>CJC-1295 no DAC is a synthetic GHRH analog</strong> — a 29-amino-acid modified fragment that hits the same receptor as natural GHRH, but resists enzymatic breakdown a little longer.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>The brain's "release the growth hormone" memo.</b> Your hypothalamus sends this memo to the pituitary several times a day, mostly at night. CJC-1295 is a lab-made copy of that memo, printed on tougher paper.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb v2" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(94,234,212,.10)"/><path d="M21 8c5 6 5 14 0 20-5-6-5-14 0-20z" fill="none" stroke="#5eead4" stroke-width="2.2"/><circle cx="21" cy="32" r="3" fill="#5eead4"/></svg><span class="term">Ghrelin</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>The "hunger hormone" made by the stomach — but it also binds the GHS receptor on pituitary somatotrophs, where it's a potent GH secretagogue acting through calcium signaling. One molecule, two jobs: appetite and GH release.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>Ipamorelin is a ghrelin mimetic</strong> — it hits the same GHS receptor as ghrelin, but engineered for GH release with far less appetite stimulation than natural ghrelin or older GHRPs.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>The hunger hormone with a side hustle.</b> Ghrelin tells your brain you're hungry <em>and</em> tells your pituitary to pulse GH. Ipamorelin borrows the second job while mostly skipping the first.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb v3" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(248,113,113,.10)"/><ellipse cx="21" cy="21" rx="11" ry="9" fill="none" stroke="#f87171" stroke-width="2.2"/><circle cx="21" cy="21" r="3" fill="#5eead4"/><path d="M10 14l4-3M32 14l-4-3" stroke="#f87171" stroke-width="1.8" stroke-linecap="round"/></svg><span class="term">Somatotroph</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>The pituitary's growth-hormone factory cell. Somatotrophs carry both GHRH receptors and ghrelin (GHS) receptors — which is the entire anatomical reason the CJC + ipamorelin combo can be synergistic: two inputs, one cell.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>Both stack members converge here.</strong> CJC knocks via the GHRH receptor (cAMP), ipamorelin via the GHS receptor (calcium) — and the somatotroph answers with a bigger pulse than either input alone.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>The one cell this whole page is about.</b> Deep in the pituitary sits a cell whose job is making growth hormone. It has two doorbells — and this stack rings both at once.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(94,234,212,.10)"/><path d="M8 28q6-16 11 0t11 0" stroke="#5eead4" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M8 34h26" stroke="#7f88a5" stroke-width="1.8" stroke-linecap="round"/></svg><span class="term">Pulsatile release</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>The body releases GH in bursts (pulses), mostly during deep sleep — not as a steady drip. Pulsatility matters: constant GH exposure desensitizes receptors and produces different (often worse) metabolic effects than the same total amount delivered in pulses.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>The no-DAC selling point.</strong> CJC-1295 no DAC's short half-life produces discrete pulses like the body's own rhythm — versus the DAC version's days-long "GH bleed," which is widely considered less physiological.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>Drumbeats, not a drone.</b> Natural GH comes in rhythmic thumps, biggest at night. The stack's fans argue short-acting pulses copy that music — while the long-acting DAC version just holds one endless note.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb v2" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(248,113,113,.10)"/><circle cx="16" cy="21" r="7" fill="none" stroke="#f87171" stroke-width="2.2"/><circle cx="28" cy="21" r="7" fill="none" stroke="#f87171" stroke-width="2.2" opacity=".45"/><path d="M21 21h2" stroke="#f87171" stroke-width="2" stroke-linecap="round"/></svg><span class="term">DAC (Drug Affinity Complex)</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>A chemical linker (maleimidopropionic acid) that lets a peptide covalently bond to serum albumin in the blood. Albumin is huge and long-lived, so the attached peptide inherits a multi-day half-life instead of minutes.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>The critical distinction on this page.</strong> CJC-1295 <em>with</em> DAC: 6–8 day half-life, sustained GH/IGF-1. CJC-1295 <em>no</em> DAC: ~30 min, brief pulses. Different compounds, different risk profiles — same name on the vial.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>A grappling hook onto a slow-moving ship.</b> DAC latches the peptide to albumin, a giant protein that lingers in blood for days — turning a 30-minute signal into a week-long one. "No DAC" means no hook, no lingering.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb v3" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(94,234,212,.10)"/><text x="13" y="20" text-anchor="middle" fill="#f87171" font-size="13" font-weight="800" font-family="inherit">1</text><text x="29" y="20" text-anchor="middle" fill="#5eead4" font-size="13" font-weight="800" font-family="inherit">1</text><path d="M21 24v6" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/><text x="21" y="38" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="800" font-family="inherit">3</text></svg><span class="term">Synergy</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>When two agents together produce an effect greater than the sum of their individual effects. GHRH + GHRP synergy is well documented: the two pathways (cAMP and calcium) potentiate each other inside the somatotroph.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>The entire rationale for the stack.</strong> Human pilot data shows GHRP+GHRH combos outperform either alone. But: synergy of the <em>principle</em> is proven; synergy of <em>this exact pairing at forum doses</em> is assumed, not measured.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>1 + 1 = 3.</b> Each peptide alone gives a modest GH pulse; together they give a big one — more than just adding them up. The concept is solid science; the specific combo's results are still just stories.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(248,113,113,.10)"/><circle cx="21" cy="18" r="8" fill="none" stroke="#f87171" stroke-width="2.2"/><path d="M21 26v8M14 34h14" stroke="#f87171" stroke-width="2.2" stroke-linecap="round"/></svg><span class="term">IGF-1</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>Insulin-like growth factor 1: made mainly by the liver in response to GH, it's the downstream mediator of most GH effects — tissue growth, repair, metabolism. Clinicians measure IGF-1 (not GH, which pulses) to gauge GH-axis activity.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>The number stack users chase.</strong> Bloodwork anecdotes revolve around IGF-1 rising — and it's also where the theoretical cancer concern lives, since IGF-1 promotes cell growth generally, not just the "good" kind.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>GH's executive assistant who does the actual work.</b> Growth hormone is the memo; IGF-1 is the one who shows up and builds things. It's also the lab number people track — and the same growth-promoting power is why the cancer question exists.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb v2" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(94,234,212,.10)"/><circle cx="21" cy="21" r="9" fill="none" stroke="#5eead4" stroke-width="2.2"/><path d="M21 12v18M12 21h18" stroke="#5eead4" stroke-width="1.6" opacity=".5"/></svg><span class="term">Selectivity</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>How precisely a drug hits its intended target without triggering related receptors. Older GHRPs (GHRP-6, GHRP-2) also nudge ACTH/cortisol and prolactin upward; a selective secretagogue raises GH while leaving those mostly alone.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>Ipamorelin's headline feature.</strong> Raun 1998 established GH release with minimal cortisol/prolactin elevation — the reason it's considered the "cleanest" GHRP and the one most often paired with CJC.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>A sniper vs a shotgun.</b> Older GH peptides hit the GH target but also sprayed stress hormones and prolactin. Ipamorelin is the sniper version — mostly just the GH pulse, minimal collateral.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb v3" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(248,113,113,.10)"/><path d="M12 30q9-4 9-12t9-8" stroke="#f87171" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="30" cy="10" r="3.4" fill="#f87171" class="glow-pulse"/></svg><span class="term">Cortisol</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>The primary stress hormone, released via the HPA axis (ACTH from the pituitary → cortisol from the adrenals). Chronically elevated cortisol breaks down muscle, stores fat centrally, and impairs sleep — the opposite of what GH-stack users want.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>The thing ipamorelin <em>doesn't</em> raise.</strong> Older GHRPs bump ACTH/cortisol alongside GH, partly defeating the purpose. Ipamorelin's selectivity for GH over cortisol is a core part of its appeal.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>The stress hormone that eats your gains.</b> Cortisol breaks muscle down and keeps you wired — exactly what you don't want while chasing GH's build-and-repair effects. A GH peptide that also spikes cortisol is working against itself.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(94,234,212,.10)"/><rect x="13" y="15" width="16" height="12" rx="6" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M21 15v12" stroke="#5eead4" stroke-width="2" stroke-dasharray="2 3"/></svg><span class="term">Placebo effect</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>Real improvement driven by expectation and ritual rather than pharmacology. GH-stack anecdotes cluster around the most placebo-responsive outcomes imaginable: sleep quality, perceived recovery, and "feeling" leaner.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>The sleep reports are peak placebo territory</strong> — subjective, fast-onset, and entangled with a new bedtime ritual. The only objective anchor anyone cites is IGF-1 bloodwork, which most reporters never actually get.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>Feeling better because you did <em>something</em>.</b> A new nightly ritual, closer attention to sleep, the excitement of a new protocol — all manufacture "results" before any molecule does anything. It's not fakery; it's just not the peptide working.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb v2" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(248,113,113,.10)"/><circle cx="21" cy="21" r="10" fill="none" stroke="#f87171" stroke-width="2.4"/><path d="M13 13l16 16M29 13L13 29" stroke="#5eead4" stroke-width="2.4" stroke-linecap="round"/></svg><span class="term">WADA</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>The World Anti-Doping Agency's Prohibited List governs tested sport worldwide. GH secretagogues sit in category S2 (peptide hormones, growth factors, and related substances) — banned at all times, in and out of competition.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>Both compounds are WADA-prohibited.</strong> Unlike GHK-Cu (not listed), the entire CJC + ipamorelin stack is off-limits for tested athletes — no ambiguity here.</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>Drug-testing's banned list — and this stack is on it.</b> Both halves, no gray area. If you compete in tested sport, this page is a museum exhibit, not a menu.</div>
+      </div>
+    </div>
+    <div class="g-item">
+      <button class="g-q"><svg class="gthumb v3" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="12" fill="rgba(94,234,212,.10)"/><path d="M14 22l5 5 9-11" stroke="#5eead4" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="21" r="12" fill="none" stroke="#5eead4" stroke-width="2" opacity=".4"/></svg><span class="term">FDA approval</span><span class="plus">+</span></button>
+      <div class="g-a">
+        <p class="gsci"><span class="gslabel">The science</span>FDA drug approval requires phased human trials proving safety and efficacy for a specific use. Both of these compounds went through some clinical development — and both programs ended without approval.</p>
+        <p class="gex"><span class="gslabel">Stack example</span><strong>Neither is FDA-approved for anything.</strong> CJC-1295's program was abandoned in 2006; ipamorelin's was discontinued after the missed Phase 2 endpoint. "Studied by pharma" is not "approved by regulators."</p>
+        <div class="plain"><span class="plabel">Plain English</span><b>Tried, tested (a bit), never approved.</b> Real drug companies ran real trials on both — and walked away. That history is more informative than any forum thread: the science was interesting enough to fund, not convincing enough to finish.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHAPTER 8 : TAKEAWAYS ================= -->
+<section class="chapter" id="ch8">
+  <div class="eyebrow reveal"><span class="n">08</span> Takeaways</div>
+  <h2 class="reveal">The <span class="hl">honest</span> summary</h2>
+  <p class="lede reveal">If you remember nothing else:</p>
+  <div class="takes">
+    <div class="take reveal"><div class="ic">🔔</div><div><h4>Two doorbells, one cell</h4><p>CJC (GHRH receptor) primes, ipamorelin (ghrelin receptor) fires — the synergy is real, textbook endocrinology.</p></div></div>
+    <div class="take reveal d1"><div class="ic">⏱️</div><div><h4>No-DAC means pulses, not bleed</h4><p>Short half-life → discrete GH pulses like the body's own rhythm. The DAC version is a different drug with a different risk profile.</p></div></div>
+    <div class="take reveal"><div class="ic">🎯</div><div><h4>Ipamorelin's edge is selectivity</h4><p>GH release with minimal cortisol/prolactin — the cleanest GHRP in the family, backed by actual human pharmacology.</p></div></div>
+    <div class="take reveal d1"><div class="ic">🕳️</div><div><h4>The combo was never trialed</h4><p>Zero human studies of CJC-1295 (no DAC) + ipamorelin together. The principle is proven; the pairing is folklore.</p></div></div>
+    <div class="take reveal"><div class="ic">🚫</div><div><h4>Unapproved and banned</h4><p>Neither is FDA-approved; both are WADA-prohibited. The pharma programs behind both were discontinued.</p></div></div>
+    <div class="take reveal d1"><div class="ic">⚖️</div><div><h4>Same axis, both directions</h4><p>Every hoped-for benefit and every theoretical risk (metabolic, oncologic) runs through the same GH/IGF-1 pathway. No free lunch.</p></div></div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="limits reveal">
+    <h3>Limits of this page</h3>
+    <ul>
+      <li><strong>Dosing, schedules, sourcing, and administration are deliberately omitted.</strong> This page will not tell you how much to use, how often, where to buy it, or how to prepare it — for any route.</li>
+      <li>Half-life and pharmacokinetic figures for the no-DAC molecule are <strong>inferred, not measured</strong> in humans — treat them as estimates.</li>
+      <li>Forum anecdotes are <strong>paraphrased recurring themes</strong>, not quotes, not data, and not endorsements.</li>
+      <li>Trial descriptions are paraphrased from published summaries; <strong>check primary sources</strong> if a number matters to a decision.</li>
+      <li>This page is a map of <strong>claims vs evidence</strong>, not a recommendation to use anything.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="disclaimer">
+  <div class="wrap">
+    <h2>Please read this before you go</h2>
+    <div class="dbox">
+      <p><strong>This page is for education and entertainment only. It is not medical advice, not a recommendation, and not an encouragement to obtain or use any compound.</strong> Nothing here establishes that CJC-1295 (no DAC) or ipamorelin is safe or effective for any purpose — most claimed benefits have never been tested in a controlled human trial.</p>
+      <p><strong>Neither compound is FDA-approved.</strong> Both went through pharmaceutical development programs that were discontinued. Both are <strong>prohibited by WADA</strong> for athletes at all times.</p>
+      <p><strong>Manipulating the GH/IGF-1 axis carries theoretical risks</strong> — including metabolic effects (insulin resistance) and the oncologic questions that accompany chronic growth-factor elevation. These are the same pathways as the hoped-for benefits; you cannot separate them.</p>
+      <p><strong>Anecdotes are not evidence.</strong> Personal stories from forums cannot prove cause and effect, and this page presents them only so you know what circulates — not so you'll act on them.</p>
+      <p><strong>Talk to a qualified healthcare professional</strong> before making any decision about your health. The author is not a medical professional, assumes no liability for actions taken based on this page, and has no commercial interest in any product mentioned.</p>
+    </div>
+    <div class="fine">
+      <p><strong>Accuracy note:</strong> figures and study descriptions are paraphrased from publicly reported research summaries. If a number matters to a decision you're making, check the primary source.</p>
+      <p><strong>No names, no sources linked:</strong> anecdotes are paraphrased themes from public forums; no individuals are identified or quoted.</p>
+    </div>
+    <div class="foot-sign"><span>An interactive educational infographic · single-file build</span><span>Not medical advice.</span></div>
+  </div>
+</footer>
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced){
+    document.querySelectorAll("svg").forEach(function(s){ if (s.pauseAnimations) s.pauseAnimations(); });
+  }
+
+  /* ---------- theme toggle (persisted, applied pre-paint) ---------- */
+  var root = document.documentElement, tog = document.getElementById("themeToggle");
+  tog.addEventListener("click", function(){
+    var next = root.getAttribute("data-theme")==="dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try{ localStorage.setItem("cjcipa-theme", next); }catch(e){}
+  });
+
+  /* ---------- smooth anchor scrolling ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click", function(ev){
+      var t = document.querySelector(a.getAttribute("href"));
+      if (t){ ev.preventDefault(); t.scrollIntoView({behavior: reduced?"auto":"smooth", block:"start"}); }
+    });
+  });
+
+  /* ---------- ambient dot canvas ---------- */
+  var cv = document.getElementById("dots"), cx = cv.getContext("2d"), dots = [];
+  var DCOLORS = ["248,113,113","94,234,212","200,120,80","251,191,36"];
+  function sizeDots(){
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    cv.width = innerWidth*dpr; cv.height = innerHeight*dpr;
+    cv.style.width = innerWidth+"px"; cv.style.height = innerHeight+"px";
+    cx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  sizeDots(); window.addEventListener("resize", sizeDots);
+  for (var i=0;i<85;i++){
+    dots.push({x:Math.random()*innerWidth, y:Math.random()*innerHeight,
+      r:1.5+Math.random()*3, vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35,
+      c:DCOLORS[(Math.random()*DCOLORS.length)|0], a:.22+Math.random()*.38,
+      ph:Math.random()*6.28, sp:.004+Math.random()*.012});
+  }
+  function dotsTick(){
+    cx.clearRect(0,0,innerWidth,innerHeight);
+    for (var k=0;k<dots.length;k++){
+      var d = dots[k]; d.ph += d.sp;
+      d.x += d.vx; d.y += d.vy;
+      if (d.x<-10) d.x = innerWidth+10; if (d.x>innerWidth+10) d.x = -10;
+      if (d.y<-10) d.y = innerHeight+10; if (d.y>innerHeight+10) d.y = -10;
+      var tw = d.a*(0.55+0.45*Math.sin(d.ph));
+      cx.beginPath(); cx.arc(d.x,d.y,d.r,0,6.2832);
+      cx.fillStyle = "rgba("+d.c+","+tw.toFixed(3)+")"; cx.fill();
+    }
+    if (!reduced) requestAnimationFrame(dotsTick);
+  }
+  dotsTick();
+
+  /* ---------- scroll reveal ---------- */
+  var revEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  function revCheck(){
+    var vh = window.innerHeight;
+    revEls.forEach(function(el){
+      if (el.classList.contains("in")) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < vh*0.88) el.classList.add("in");
+    });
+  }
+  window.addEventListener("scroll", revCheck, {passive:true}); revCheck();
+
+  /* ---------- count-up stats ---------- */
+  var counters = Array.prototype.slice.call(document.querySelectorAll("[data-count]"));
+  var counted = false;
+  function countUp(){
+    if (counted) return;
+    var hero = document.querySelector(".hero-stats");
+    if (!hero) return;
+    var r = hero.getBoundingClientRect();
+    if (r.top > window.innerHeight*0.9) return;
+    counted = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute("data-count"),10), t0 = null;
+      function step(ts){
+        if (!t0) t0 = ts;
+        var p = Math.min((ts-t0)/1600, 1), e = 1-Math.pow(1-p,3);
+        el.textContent = Math.round(target*e).toLocaleString("en-US");
+        if (p<1) requestAnimationFrame(step);
+      }
+      if (reduced){ el.textContent = target.toLocaleString("en-US"); }
+      else requestAnimationFrame(step);
+    });
+  }
+  window.addEventListener("scroll", countUp, {passive:true}); countUp();
+
+  /* ---------- scrollspy + gliding pill ---------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('a[data-spy]'));
+  var secs = links.map(function(a){ return document.getElementById(a.getAttribute("data-spy")); }).filter(Boolean);
+  var tocPill = document.querySelector('.toc .toc-pill');
+  function spy(){
+    var y = window.scrollY + 140, cur = secs[0] ? secs[0].id : null;
+    secs.forEach(function(s){ if (s.offsetTop <= y) cur = s.id; });
+    links.forEach(function(a){ a.classList.toggle("active", a.getAttribute("data-spy")===cur); });
+    if (tocPill){
+      var active = document.querySelector('.toc a[data-spy="'+cur+'"]');
+      if (active){
+        tocPill.style.opacity = "1";
+        tocPill.style.height = active.offsetHeight + "px";
+        tocPill.style.transform = "translateY(" + active.offsetTop + "px)";
+      } else { tocPill.style.opacity = "0"; }
+    }
+  }
+  window.addEventListener("scroll", spy, {passive:true});
+  window.addEventListener("resize", spy);
+  window.addEventListener("load", spy);
+  spy();
+
+  /* ---------- scroll progress (lerped) ---------- */
+  var prog = document.getElementById("progress");
+  var tocProg = document.getElementById("tocProg");
+  var tocPct = document.getElementById("tocPct");
+  var progTarget = 0, progShown = 0, progRaf = null;
+  function paintProg(p){
+    prog.style.width = p + "%";
+    if (tocProg) tocProg.style.width = p + "%";
+    if (tocPct) tocPct.textContent = Math.round(p) + "%";
+  }
+  function progTick(){
+    progRaf = null;
+    progShown += (progTarget - progShown) * 0.16;
+    if (Math.abs(progTarget - progShown) < 0.05) progShown = progTarget;
+    paintProg(progShown);
+    if (progShown !== progTarget) progRaf = requestAnimationFrame(progTick);
+  }
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    progTarget = max>0 ? (h.scrollTop/max*100) : 0;
+    if (reduced){ progShown = progTarget; paintProg(progShown); return; }
+    if (progRaf === null) progRaf = requestAnimationFrame(progTick);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* ---------- glossary accordion ---------- */
+  document.querySelectorAll(".g-item").forEach(function(item){
+    var q = item.querySelector(".g-q"), a = item.querySelector(".g-a");
+    q.addEventListener("click", function(){
+      var open = item.classList.toggle("open");
+      a.style.maxHeight = open ? (a.scrollHeight + "px") : "0px";
+    });
+  });
+
+  /* ---------- completion confetti ---------- */
+  var confCanvas = document.getElementById("confetti"),
+      cctx = confCanvas.getContext("2d"),
+      confettiDone = false, confettiPieces = [], confettiRaf = null;
+  var CONF_COLORS = ["248,113,113","94,234,212","251,191,36","251,113,133","103,232,249"];
+  function sizeConfetti(){
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    confCanvas.width = window.innerWidth*dpr;
+    confCanvas.height = window.innerHeight*dpr;
+    confCanvas.style.width = window.innerWidth+"px";
+    confCanvas.style.height = window.innerHeight+"px";
+    cctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function confettiTick(){
+    var W = window.innerWidth, H = window.innerHeight, alive = false, i, p, fade;
+    cctx.clearRect(0,0,W,H);
+    for (i=0;i<confettiPieces.length;i++){
+      p = confettiPieces[i];
+      p.life++; p.sway += p.swaySpd;
+      p.x += p.vx + Math.sin(p.sway)*0.8;
+      p.y += p.vy; p.rot += p.vr;
+      if (p.y > H+30 || p.life >= p.max) continue;
+      alive = true;
+      fade = p.life > p.max-60 ? Math.max(0,(p.max-p.life)/60) : 1;
+      cctx.save();
+      cctx.translate(p.x,p.y); cctx.rotate(p.rot);
+      cctx.fillStyle = "rgba("+p.c+","+(0.85*fade).toFixed(3)+")";
+      if (i%3===0){ cctx.beginPath(); cctx.arc(0,0,p.w/2,0,6.2832); cctx.fill(); }
+      else { cctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); }
+      cctx.restore();
+    }
+    if (alive){ confettiRaf = requestAnimationFrame(confettiTick); }
+    else { confettiRaf = null; confCanvas.classList.remove("show"); confettiPieces = []; }
+  }
+  function launchConfetti(){
+    if (confettiDone || reduced) return;
+    confettiDone = true;
+    sizeConfetti();
+    window.addEventListener("resize", sizeConfetti);
+    var W = window.innerWidth, i;
+    for (i=0;i<70;i++){
+      confettiPieces.push({
+        x: Math.random()*W, y: -20-Math.random()*90,
+        w: 4+Math.random()*5, h: 6+Math.random()*7,
+        vy: 1.2+Math.random()*2.2, vx: (Math.random()-.5)*1.4,
+        rot: Math.random()*6.28, vr: (Math.random()-.5)*0.2,
+        sway: Math.random()*6.28, swaySpd: 0.02+Math.random()*0.04,
+        c: CONF_COLORS[(Math.random()*CONF_COLORS.length)|0],
+        life: 0, max: 240+Math.random()*120
+      });
+    }
+    confCanvas.classList.add("show");
+    var toast = document.getElementById("doneToast");
+    if (toast){
+      toast.classList.add("show");
+      setTimeout(function(){ toast.classList.remove("show"); }, 4200);
+    }
+    confettiRaf = requestAnimationFrame(confettiTick);
+  }
+  var footEl = document.querySelector("footer.disclaimer");
+  if (footEl && "IntersectionObserver" in window){
+    var footObs = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ launchConfetti(); footObs.disconnect(); } });
+    }, {threshold: 0.35});
+    footObs.observe(footEl);
+  }
+})();
+</script>
+</body>
+</html>
