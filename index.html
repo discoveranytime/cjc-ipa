@@ -211,6 +211,17 @@ h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .proto-disc{font-size:.82rem;color:var(--faint);border:1px dashed var(--line);border-radius:12px;
   padding:.9rem 1.1rem;margin-top:1.2rem;line-height:1.65}
 .proto-disc strong{color:var(--muted)}
+
+/* --- ambient motion additions: subtle, additive, non-intrusive --- */
+@keyframes ringp{0%{transform:scale(.5);opacity:.85}100%{transform:scale(2.1);opacity:0}}
+.ringp{transform-box:fill-box;transform-origin:center;animation:ringp 2.8s ease-out infinite}
+@keyframes seqGlow{0%,100%{opacity:.35}18%{opacity:1}40%{opacity:.35}}
+.seqr1{animation:seqGlow 4.5s ease-in-out infinite}
+.seqr2{animation:seqGlow 4.5s ease-in-out .9s infinite}
+.seqr3{animation:seqGlow 4.5s ease-in-out 1.8s infinite}
+.flowseq{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out infinite}
+.flowseq2{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out .9s infinite}
+.flowseq3{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out 1.8s infinite}
 </style>
 <style>
 .gloss{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
@@ -323,7 +334,7 @@ footer.disclaimer .fine strong{color:var(--muted)}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
-  .flow,.float-slow,.float-slower,.glow-pulse,.gthumb,.orb,.take .ic,.hero h1 .g{animation:none}
+  .flow,.float-slow,.float-slower,.glow-pulse,.gthumb,.orb,.take .ic,.hero h1 .g,.ringp,.seqr1,.seqr2,.seqr3,.flowseq,.flowseq2,.flowseq3{animation:none}
   .toc-pill{transition:none}
   .scroll-hint{animation:none}
   #dots{display:none}
@@ -573,11 +584,11 @@ footer.disclaimer .fine strong{color:var(--muted)}
         <ellipse cx="200" cy="120" rx="100" ry="75" fill="rgba(255,255,255,.03)" stroke="#a9b1c9" stroke-width="2.5"/>
         <text x="200" y="112" text-anchor="middle" fill="#a9b1c9" font-size="15" font-weight="700" font-family="inherit">somatotroph</text>
         <text x="200" y="134" text-anchor="middle" fill="#7f88a5" font-size="12.5" font-family="inherit">pituitary cell</text>
-        <g>
+        <g class="seqr1">
           <rect x="112" y="180" width="70" height="30" rx="8" fill="rgba(248,113,113,.12)" stroke="#f87171" stroke-width="2"/>
           <text x="147" y="200" text-anchor="middle" fill="#f87171" font-size="11.5" font-weight="700" font-family="inherit">GHRH-R</text>
         </g>
-        <g>
+        <g class="seqr2">
           <rect x="218" y="180" width="70" height="30" rx="8" fill="rgba(94,234,212,.10)" stroke="#5eead4" stroke-width="2"/>
           <text x="253" y="200" text-anchor="middle" fill="#5eead4" font-size="11.5" font-weight="700" font-family="inherit">GHS-R</text>
         </g>
@@ -585,7 +596,7 @@ footer.disclaimer .fine strong{color:var(--muted)}
       </g>
       <use href="#ghp" stroke="#fbbf24" stroke-width="4" class="flow" fill="none"/>
       <g class="float-slower">
-        <circle cx="600" cy="120" r="40" fill="rgba(251,191,36,.10)" stroke="#fbbf24" stroke-width="2.5" class="glow-pulse"/>
+        <circle class="ringp" cx="600" cy="120" r="40" fill="none" stroke="#fbbf24" stroke-width="2"/><circle cx="600" cy="120" r="40" fill="rgba(251,191,36,.10)" stroke="#fbbf24" stroke-width="2.5" class="glow-pulse"/>
         <text x="600" y="128" text-anchor="middle" fill="#fbbf24" font-size="20" font-weight="800" font-family="inherit">GH</text>
       </g>
       <use href="#igfp" stroke="#f87171" stroke-width="3" class="flow" fill="none" opacity=".7"/>
@@ -597,6 +608,21 @@ footer.disclaimer .fine strong{color:var(--muted)}
       <text x="450" y="318" text-anchor="middle" fill="#7f88a5" font-size="14" font-family="inherit">The cascade: two receptors → GH pulse → liver → IGF-1 (the actual growth signal).</text>
     </svg>
     <div class="cap">GH is the messenger; IGF-1 does most of the downstream work — and carries most of the theoretical risk.</div>
+      <div class="diagram reveal">
+      <svg viewBox="0 0 900 300" role="img" aria-label="Pulsatile growth hormone spikes with no-DAC versus a flat elevated bleed with the DAC version">
+      <g font-family="inherit">
+        <text x="450" y="30" text-anchor="middle" fill="#a9b1c9" font-size="15">Why "no DAC" matters: pulses versus bleed</text>
+        <text x="80" y="86" fill="#5eead4" font-size="14" font-weight="800">No-DAC</text>
+        <text x="80" y="106" fill="#7f88a5" font-size="12">short half-life → pulses</text>
+        <line x1="220" y1="130" x2="820" y2="130" stroke="#3a4160" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/>
+        <path d="M220 130 L280 130 L300 55 L320 130 L380 130 L400 55 L420 130 L480 130 L500 55 L520 130 L580 130 L600 55 L620 130 L680 130 L700 55 L720 130 L780 130" fill="none" stroke="#5eead4" stroke-width="3" stroke-linejoin="round" class="flow"/>
+        <text x="80" y="206" fill="#f87171" font-size="14" font-weight="800">DAC version</text>
+        <text x="80" y="226" fill="#7f88a5" font-size="12">long half-life → bleed</text>
+        <line x1="220" y1="232" x2="820" y2="232" stroke="#f87171" stroke-width="3" stroke-linecap="round"/>
+        <text x="450" y="282" text-anchor="middle" fill="#7f88a5" font-size="13">Pulses mimic the body's own rhythm; a constant bleed does not.</text>
+      </g>
+      </svg>
+      </div>
   </div>
 
   <div class="grid2">
