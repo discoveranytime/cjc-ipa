@@ -28,15 +28,15 @@ body{font-family:var(--font);background:var(--bg0);color:var(--ink);
   font-size:1.06rem;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .bg-grad{position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
-    radial-gradient(900px 620px at 12% -6%, rgba(220,38,38,.16), transparent 60%),
-    radial-gradient(820px 600px at 88% 22%, rgba(13,148,136,.14), transparent 60%),
-    radial-gradient(1000px 800px at 50% 110%, rgba(190,60,60,.10), transparent 62%),
-    radial-gradient(700px 500px at 78% 78%, rgba(251,113,133,.07), transparent 60%)}
+    radial-gradient(900px 620px at 12% -6%, rgba(220,38,38,0.256), transparent 60%),
+    radial-gradient(820px 600px at 88% 22%, rgba(13,148,136,0.224), transparent 60%),
+    radial-gradient(1000px 800px at 50% 110%, rgba(190,60,60,0.16), transparent 62%),
+    radial-gradient(700px 500px at 78% 78%, rgba(251,113,133,0.112), transparent 60%)}
 #dots{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85}
 .orb{position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(90px)}
-.o1{width:520px;height:520px;left:-140px;top:6%;background:radial-gradient(circle,rgba(220,38,38,.14),transparent 70%);animation:drift1 38s ease-in-out infinite alternate}
-.o2{width:460px;height:460px;right:-120px;top:38%;background:radial-gradient(circle,rgba(13,148,136,.14),transparent 70%);animation:drift2 46s ease-in-out infinite alternate}
-.o3{width:430px;height:430px;left:24%;bottom:-160px;background:radial-gradient(circle,rgba(251,191,36,.08),transparent 70%);animation:drift3 54s ease-in-out infinite alternate}
+.o1{width:520px;height:520px;left:-140px;top:6%;background:radial-gradient(circle,rgba(220,38,38,0.224),transparent 70%);animation:drift1 38s ease-in-out infinite alternate}
+.o2{width:460px;height:460px;right:-120px;top:38%;background:radial-gradient(circle,rgba(13,148,136,0.224),transparent 70%);animation:drift2 46s ease-in-out infinite alternate}
+.o3{width:430px;height:430px;left:24%;bottom:-160px;background:radial-gradient(circle,rgba(251,191,36,0.128),transparent 70%);animation:drift3 54s ease-in-out infinite alternate}
 @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(120px,80px)}}
 @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-100px,-70px)}}
 @keyframes drift3{from{transform:translate(0,0)}to{transform:translate(90px,-80px)}}
@@ -283,10 +283,10 @@ footer.disclaimer .fine strong{color:var(--muted)}
   color-scheme:light;
 }
 [data-theme="light"] .bg-grad{background:
-  radial-gradient(900px 620px at 12% -6%, rgba(220,38,38,.08), transparent 60%),
-  radial-gradient(820px 600px at 88% 22%, rgba(13,148,136,.10), transparent 60%),
-  radial-gradient(1000px 800px at 50% 110%, rgba(190,60,60,.06), transparent 62%),
-  radial-gradient(700px 500px at 78% 78%, rgba(190,24,93,.05), transparent 60%)}
+  radial-gradient(900px 620px at 12% -6%, rgba(220,38,38,0.128), transparent 60%),
+  radial-gradient(820px 600px at 88% 22%, rgba(13,148,136,0.16), transparent 60%),
+  radial-gradient(1000px 800px at 50% 110%, rgba(190,60,60,0.096), transparent 62%),
+  radial-gradient(700px 500px at 78% 78%, rgba(190,24,93,0.08), transparent 60%)}
 [data-theme="light"] nav.chapters{background:rgba(227,227,224,.88)}
 [data-theme="light"] .toc{background:rgba(227,227,224,.85)}
 [data-theme="light"] .diagram{background:radial-gradient(600px 300px at 50% 0%,rgba(220,38,38,.07),transparent 70%),#e8e8e5}
@@ -807,7 +807,7 @@ footer.disclaimer .fine strong{color:var(--muted)}
 
   <div class="callout reveal"><strong>Why the conversation never converges:</strong> no trials to anchor it, huge individual variation, different goals — and a gray market where the vial's contents are themselves uncertain. Ten people can follow ten different approaches and all sincerely report success.</div>
 
-  <p class="proto-disc reveal"><strong>Discussion map, not a protocol.</strong> This chapter describes what people talk about online — it does not tell you how much to use, when, how often, or how to prepare or administer anything, and it never will. CJC-1295 (no DAC) and ipamorelin are investigational and not FDA-approved. Do not base health decisions on forum consensus; talk to a qualified clinician.</p>
+  <p class="proto-disc reveal"><strong>Discussion map, not a protocol.</strong> This chapter describes what people talk about online — it does not tell you how much to use, when, how often, or how to prepare or administer anything, and it never will.</p>
 </section>
 
 <!-- ================= CHAPTER 7 : SAFETY ================= -->
@@ -954,7 +954,7 @@ footer.disclaimer .fine strong{color:var(--muted)}
       <li>Half-life and pharmacokinetic figures for the no-DAC molecule are <strong>inferred, not measured</strong> in humans — treat them as estimates.</li>
       <li>Forum anecdotes are <strong>paraphrased recurring themes</strong>, not quotes, not data, and not endorsements.</li>
       <li>Trial descriptions are paraphrased from published summaries; <strong>check primary sources</strong> if a number matters to a decision.</li>
-      <li>This page is a map of <strong>claims vs evidence</strong>, not a recommendation to use anything.</li>
+      <li>This page is a map of <strong>claims vs evidence</strong>.</li>
     </ul>
   </div>
 </section>
