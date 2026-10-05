@@ -193,6 +193,13 @@ h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
   padding:.28rem .6rem;border-radius:7px;text-transform:uppercase;margin-bottom:.65rem}
 .anec h4{font-size:1.05rem;font-weight:800;margin-bottom:.5rem}
 .anec-head{display:flex;align-items:center;gap:.85rem;margin-bottom:.55rem}
+.udot{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--amber);flex:0 0 auto;position:relative}
+.udot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--amber);animation:udotPulse 2.2s ease-out infinite}
+@keyframes udotPulse{0%{transform:scale(.55);opacity:.9}70%{opacity:.25}100%{transform:scale(1.25);opacity:0}}
+.anec-head .udot{margin-left:.15rem}
+.ulegend{display:flex;align-items:center;gap:.75rem;margin:0 0 1.5rem;padding:.85rem 1.15rem;border:1px dashed var(--line);border-radius:14px;background:rgba(255,255,255,.03);color:var(--muted);font-size:.93rem}
+.ulegend strong{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.udot::after{animation:none;opacity:.35;transform:scale(.8)}}
 .anec-head .thumb{flex:0 0 auto;width:54px;height:54px;border-radius:14px;border:1px solid var(--line)}
 .anec-head h4{margin-bottom:0}
 .anec p{color:var(--muted);font-size:.95rem}
@@ -674,88 +681,90 @@ footer.disclaimer .fine strong{color:var(--muted)}
   <p class="lede reveal">Recurring themes from forums, paraphrased. Every one is an <strong>unverified personal story</strong> — useful for knowing what to watch for, useless as proof.</p>
   <div class="folk-note reveal"><strong>Read these like overheard conversations, not results.</strong> No controls, no blinding, heavy survivorship bias — and GH-adjacent effects (sleep, water, hunger) are exactly the kind expectation can manufacture.</div>
 
-  <div class="anec-grid">
+    <div class="ulegend reveal"><span class="udot" aria-hidden="true"></span><span><strong>Unverified anecdote</strong> — the pulsing dot marks a paraphrased recurring theme from forums and social media: not verified, not evidence.</span></div>
+
+<div class="anec-grid">
     <div class="anec reveal">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M38 12a12 12 0 1 0 8 20" fill="none" stroke="#5eead4" stroke-width="2.6" stroke-linecap="round"/><path d="M16 34l2-2M38 34l-2-2M27 40v-3" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/></svg><h4>Deeper sleep</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M38 12a12 12 0 1 0 8 20" fill="none" stroke="#5eead4" stroke-width="2.6" stroke-linecap="round"/><path d="M16 34l2-2M38 34l-2-2M27 40v-3" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/></svg><h4>Deeper sleep</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>The most consistent theme: <strong>falling asleep faster and waking more refreshed</strong>, usually attributed to the nighttime pulse riding the natural GH surge. Often reported within the first week.</p>
       <div class="caveat">Caveat: sleep is the #1 placebo-responsive outcome, and a new bedtime ritual alone improves it. No sleep trial of this stack exists.</div>
     </div>
     <div class="anec reveal d1">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><circle cx="27" cy="24" r="10" fill="none" stroke="#f87171" stroke-width="2.4"/><path d="M22 24h.5M32 24h.5M23 29q4 3 8 0" stroke="#f87171" stroke-width="2" stroke-linecap="round"/><path d="M14 40q13-6 26 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><h4>Vivid dreams</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><circle cx="27" cy="24" r="10" fill="none" stroke="#f87171" stroke-width="2.4"/><path d="M22 24h.5M32 24h.5M23 29q4 3 8 0" stroke="#f87171" stroke-width="2" stroke-linecap="round"/><path d="M14 40q13-6 26 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><h4>Vivid dreams</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>A close second: <strong>unusually vivid, memorable dreams</strong>. Frequently mentioned alongside the sleep reports — sometimes as a perk, sometimes as a nuisance.</p>
       <div class="caveat">Caveat: GH-axis activity and dreaming have a plausible link, but dream recall is also boosted by simply paying attention to sleep.</div>
     </div>
     <div class="anec reveal">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="12" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 19v16M19 27h16" stroke="#5eead4" stroke-width="2.4" stroke-linecap="round"/><path d="M27 19l-3 3M27 19l3 3" stroke="#5eead4" stroke-width="1.8" stroke-linecap="round"/></svg><h4>"No hunger spike"</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="12" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 19v16M19 27h16" stroke="#5eead4" stroke-width="2.4" stroke-linecap="round"/><path d="M27 19l-3 3M27 19l3 3" stroke="#5eead4" stroke-width="1.8" stroke-linecap="round"/></svg><h4>"No hunger spike"</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>Users switching from GHRP-6 often note <strong>much less ravenous hunger</strong> on ipamorelin — cited as the reason they chose it over older GHRPs.</p>
       <div class="caveat">Caveat: aligns with ipamorelin's selectivity data, but "less hungry than GHRP-6" is a low bar and still self-reported.</div>
     </div>
     <div class="anec reveal d1">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><path d="M18 20c0-4 3-6 5-8M27 22c0-5 4-7 6-10M36 24c0-4 3-6 4-8" stroke="#f87171" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="27" cy="36" rx="12" ry="7" fill="none" stroke="#f87171" stroke-width="2.2"/><path d="M20 36q7-4 14 0" stroke="#f87171" stroke-width="1.8" fill="none"/></svg><h4>Water retention</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><path d="M18 20c0-4 3-6 5-8M27 22c0-5 4-7 6-10M36 24c0-4 3-6 4-8" stroke="#f87171" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="27" cy="36" rx="12" ry="7" fill="none" stroke="#f87171" stroke-width="2.2"/><path d="M20 36q7-4 14 0" stroke="#f87171" stroke-width="1.8" fill="none"/></svg><h4>Water retention</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p><strong>Puffy face, swollen fingers, a few pounds of "mystery weight"</strong> in the first weeks — the classic GH signature, and the reason some users quit early.</p>
       <div class="caveat">Caveat: genuinely consistent with GH physiology (sodium/water retention) — which makes it one of the more believable anecdote clusters, not proof of benefit.</div>
     </div>
     <div class="anec reveal">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M20 14v18M27 14v22M34 14v18" stroke="#5eead4" stroke-width="3" stroke-linecap="round"/><path d="M16 40q11-4 22 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="27" cy="30" r="2.4" fill="#f87171" class="glow-pulse"/></svg><h4>Tingling hands</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M20 14v18M27 14v22M34 14v18" stroke="#5eead4" stroke-width="3" stroke-linecap="round"/><path d="M16 40q11-4 22 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="27" cy="30" r="2.4" fill="#f87171" class="glow-pulse"/></svg><h4>Tingling hands</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p><strong>Numbness or tingling in fingers/hands</strong>, especially overnight — described like mild carpal tunnel. Usually fades if use stops.</p>
       <div class="caveat">Caveat: another textbook GH effect (tissue swelling compressing nerves). Believable as a side-effect report; still uncontrolled.</div>
     </div>
     <div class="anec reveal d1">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><path d="M14 34l8-12 6 8 6-10 6 14" stroke="#f87171" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="42" x2="42" y2="42" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/></svg><h4>Faster recovery</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><path d="M14 34l8-12 6 8 6-10 6 14" stroke="#f87171" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="42" x2="42" y2="42" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/></svg><h4>Faster recovery</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>Lifters report <strong>less soreness and quicker bounce-back</strong> between sessions. The claim the whole stack is sold on — and the one with the least evidence.</p>
       <div class="caveat">Caveat: the flagship claim has zero trial support. Better sleep alone (see tile #1) could explain all of it.</div>
     </div>
     <div class="anec reveal">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="11" fill="none" stroke="#7f88a5" stroke-width="2.5"/><path d="M27 20v7l5 3" stroke="#7f88a5" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><h4>"Nothing happened"</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="11" fill="none" stroke="#7f88a5" stroke-width="2.5"/><path d="M27 20v7l5 3" stroke="#7f88a5" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><h4>"Nothing happened"</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>The quiet file: <strong>weeks of use, no change in sleep, recovery, or anything else</strong> — sometimes followed by suspicion the vials were bunk.</p>
       <div class="caveat">Caveat: non-responders and bad product are indistinguishable in anecdotes — which is itself the point about gray-market quality.</div>
     </div>
     <div class="anec reveal d1">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><rect x="12" y="16" width="14" height="22" rx="4" fill="none" stroke="#f87171" stroke-width="2.4"/><rect x="28" y="16" width="14" height="22" rx="4" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M19 24v6M35 24v6" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/></svg><h4>The DAC mix-up</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(248,113,113,.10)"/><rect x="12" y="16" width="14" height="22" rx="4" fill="none" stroke="#f87171" stroke-width="2.4"/><rect x="28" y="16" width="14" height="22" rx="4" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M19 24v6M35 24v6" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/></svg><h4>The DAC mix-up</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>A recurring cautionary tale: users <strong>buying "CJC-1295" without checking DAC status</strong> — then wondering why one version needs frequent use and the other doesn't. Lab-test posts showing mislabeled vials fuel the paranoia.</p>
       <div class="caveat">Caveat: this one's about the market, not the molecule — but it's the most actionable theme here: the label is not the molecule.</div>
     </div>
     <div class="anec reveal">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="12" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 18v9l6 4" stroke="#5eead4" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20 8l2 3M34 8l-2 3" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/></svg><h4>Morning freshness</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="12" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 18v9l6 4" stroke="#5eead4" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20 8l2 3M34 8l-2 3" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/></svg><h4>Morning freshness</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>Waking up before the alarm feeling <strong>genuinely restored — the morning grogginess just gone</strong>. Described as the first thing people notice, sometimes within the first few days.</p>
       <div class="caveat">Caveat: also the outcome most vulnerable to expectation — a new bedtime ritual plus optimism about a new compound both improve mornings on their own.</div>
     </div>
     <div class="anec reveal d1">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M27 10c8 0 14 6 14 14 0 9-6 14-14 20-8-6-14-11-14-20 0-8 6-14 14-14Z" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 20v10M22 25h10" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/></svg><h4>Skin and nails</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M27 10c8 0 14 6 14 14 0 9-6 14-14 20-8-6-14-11-14-20 0-8 6-14 14-14Z" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 20v10M22 25h10" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/></svg><h4>Skin and nails</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p><strong>Faster-growing nails, skin looking clearer or firmer</strong> within a month or two — frequently mentioned by users who weren't even looking for it.</p>
       <div class="caveat">Caveat: skin and nail turnover respond to many things: hydration, sleep, season. GH does influence collagen turnover, but no trial measured cosmetic outcomes for this stack.</div>
     </div>
     <div class="anec reveal">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="20" cy="27" r="7" fill="none" stroke="#5eead4" stroke-width="2.4"/><circle cx="34" cy="27" r="7" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 27h0" stroke="#5eead4" stroke-width="2.4" stroke-linecap="round"/><path d="M14 42q13-5 26 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><h4>Nagging joint eased</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="20" cy="27" r="7" fill="none" stroke="#5eead4" stroke-width="2.4"/><circle cx="34" cy="27" r="7" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M27 27h0" stroke="#5eead4" stroke-width="2.4" stroke-linecap="round"/><path d="M14 42q13-5 26 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><h4>Nagging joint eased</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>Old tendon and joint niggles — elbows, knees, shoulders — <strong>feeling smoother and less achy during training</strong>. A favorite theme in lifting communities.</p>
       <div class="caveat">Caveat: GH-driven fluid retention in connective tissue could genuinely ease creaky joints short-term — that's symptom relief, not tissue repair, and says nothing about the underlying structure.</div>
     </div>
     <div class="anec reveal d1">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M14 36l8-14 6 9 6-12 6 11" stroke="#5eead4" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="44" x2="42" y2="44" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/></svg><h4>Training capacity</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M14 36l8-14 6 9 6-12 6 11" stroke="#5eead4" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="44" x2="42" y2="44" stroke="#7f88a5" stroke-width="2" stroke-linecap="round"/></svg><h4>Training capacity</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>Handling <strong>more weekly volume and bouncing back between hard sessions faster</strong> — usually framed as recovery rather than strength. The work gets easier to repeat.</p>
       <div class="caveat">Caveat: better sleep plus expectation is a complete alternative explanation. No performance trial exists; personal records are not data.</div>
     </div>
     <div class="anec reveal">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="12" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M19 30q8 6 16 0" stroke="#5eead4" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="22" cy="23" r="1.6" fill="#5eead4"/><circle cx="32" cy="23" r="1.6" fill="#5eead4"/></svg><h4>Steadier mood</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><circle cx="27" cy="27" r="12" fill="none" stroke="#5eead4" stroke-width="2.4"/><path d="M19 30q8 6 16 0" stroke="#5eead4" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="22" cy="23" r="1.6" fill="#5eead4"/><circle cx="32" cy="23" r="1.6" fill="#5eead4"/></svg><h4>Steadier mood</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p>Feeling <strong>calmer and more even-keeled through the day</strong> — usually attributed to finally sleeping properly rather than any direct effect.</p>
       <div class="caveat">Caveat: mood tracks sleep quality tightly, so this may be entirely downstream of rest. Self-reported mood is also highly suggestible.</div>
     </div>
     <div class="anec reveal d1">
-      <span class="stamp">Unverified anecdote</span>
-      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M27 12c-6 8-8 14-8 22M27 12c6 8 8 14 8 22M27 12v26" stroke="#5eead4" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M18 44q9-4 18 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><h4>Hair growing faster</h4></div>
+      
+      <div class="anec-head"><svg class="thumb" viewBox="0 0 54 54" aria-hidden="true"><rect width="54" height="54" rx="14" fill="rgba(94,234,212,.10)"/><path d="M27 12c-6 8-8 14-8 22M27 12c6 8 8 14 8 22M27 12v26" stroke="#5eead4" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M18 44q9-4 18 0" stroke="#7f88a5" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><h4>Hair growing faster</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div>
       <p><strong>Haircuts needed noticeably sooner, hair feeling thicker</strong> — usually reported as a neutral-to-positive surprise rather than a goal.</p>
       <div class="caveat">Caveat: growth rate is easy to misjudge and hard to verify. GH/IGF-1 does influence follicles, but faster growth isn't more hair — and nobody measured it.</div>
     </div>
